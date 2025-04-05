@@ -13,4 +13,9 @@
 /CalAreaOfCircle/build/
 /DisplayCurrentTime/nbproject/private/
 /DisplayCurrentTime/build/
+<<<<<<< HEAD
 >>>>>>> af52b57537ef967d377b41e5c0879edb7aaae296
+=======
+/CalculateInterest/nbproject/private/
+/CalculateInterest/build/
+>>>>>>> 76b5b472ebda1c34fd3a0ac1edda489f0e8fbc0f
