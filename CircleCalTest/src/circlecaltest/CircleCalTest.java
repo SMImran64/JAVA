@@ -21,15 +21,13 @@ public class CircleCalTest {
 
             if (positiveValue > 0) {
                 System.out.println("The result :" + Math.PI * Math.pow(positiveValue, 2));
-            }
-            else{
+            } else {
                 System.err.println("Again you Enter a Negative Value");
             }
         } else {
             System.out.println("The result: " + Math.PI * Math.pow(rediousValue, 2));
         }
 
-        
     }
 
 }
