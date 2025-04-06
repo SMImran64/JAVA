@@ -44,16 +44,16 @@ public class PracticeSession {
         
         int numberOfYears = s.nextInt();
         
-        System.err.println("Enter loan Amount");
+        System.out.println("Enter loan Amount");
         double loanAmount = s.nextDouble();
         
         double monthlyPayment = loanAmount*monthlyInterestRate/(1-1/Math.pow(1+ monthlyInterestRate,numberOfYears*12));
         
         double totalPayment = monthlyPayment* numberOfYears*12;
         
-        System.err.println("The Monthly Payment: $"+(int)monthlyPayment);
-        System.err.println("The Total Payment: $"+(int)totalPayment);
-        
+        System.out.println("The Monthly Payment: $"+(int)monthlyPayment);
+        System.out.println("The Total Payment: $"+(int)totalPayment);
+                
         
         
         
