@@ -4,37 +4,55 @@ package calculateinterest;
 import java.util.Scanner;
 
 
+
+
 public class CalculateInterest {
 
    
     public static void main(String[] args) {
         
-        Scanner input = new Scanner(System.in);
+//        Scanner input = new Scanner(System.in);
+//        
+//        System.out.println("Enter your interest rate");
+//        
+//        double interestRate = input.nextDouble();
+//        
+//        double monthlyInterestRate = interestRate/1200;
+//        
+//        System.out.println("Enter number of year ");
+//        
+//        int numberOfYears = input.nextInt();
+//        
+//        System.out.println("Enter loan amount");
+//        
+//        double loanAmount = input.nextDouble();
+//        
+//        double monthlyPayment = loanAmount*monthlyInterestRate /(1-
+//                1/Math.pow(1+ monthlyInterestRate,numberOfYears*12));
+//        
+//        
+//        double totalPayment = monthlyPayment*  numberOfYears * 12;
+//        
+//        System.out.println("Monthly Payment "+ monthlyPayment);
+//        System.out.println("Total Payment "+ totalPayment);
         
-        System.out.println("Enter your interest rate");
+        Scanner s = new Scanner(System.in);
         
-        double interestRate = input.nextDouble();
+        System.out.println("Enter optimum Interest Rate");
         
-        double monthlyInterestRate = interestRate/1200;
+        float interestRate = s.nextFloat();
         
-        System.out.println("Enter number of year ");
+        float monthlyInterestRate = interestRate/1200;
         
-        int numberOfYears = input.nextInt();
+        System.out.println("Enter Number of Years");
+         
+        int numberOfYears = s.nextInt();
         
-        System.out.println("Enter loan amount");
+        System.out.println("Enter Loan Amount");
         
-        double loanAmount = input.nextDouble();
+        float loanAmount = s.nextInt();
         
-        double monthlyPayment = loanAmount*monthlyInterestRate /(1-
-                1/Math.pow(1+ monthlyInterestRate,numberOfYears*12));
-        
-        
-        double totalPayment = monthlyPayment*  numberOfYears * 12;
-        
-        System.out.println("Monthly Payment "+ monthlyPayment);
-        System.out.println("Total Payment "+ totalPayment);
-        
-        
+        float monthlyPayment = loanAmount * monthlyInterestRate/(1-1/Math.pow(1+monthlyInterestRate,numberOfYears*12));
         
         
         
