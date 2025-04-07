@@ -10,11 +10,11 @@ public class MojarGame {
 
         System.out.println("Enter your Lucky Number into 0-9");
 
-        int game = (int) (Math.random() * 10);
+        int game = (int)(Math.random() * 10);
 
         int lucky = g.nextInt();
 
-        if (lucky == game) {
+        if (lucky == game){
 
             System.out.println("Your are Win");
         } else {
