@@ -8,33 +8,29 @@ public class RandomNumberGame {
 
         Scanner g = new Scanner(System.in);
         int randomNumber = (int) (Math.random() * 10);
+        System.out.println("" + randomNumber);
 
         int count = 0;
 
         while (count < 3) {
-            System.out.println("Enter Your Guess Number b2in 0-9 max three times");
+            System.out.println("Enter Your Guess");
             int value = g.nextInt();
 
             if (value == randomNumber) {
-
-                System.out.println("Tumi Jitta Gecho");
+                System.out.println("You Win");
                 break;
-            } else {
-                System.err.println("Tumi Hairra Gecho");
-                count++;
-                if (value > randomNumber) {
-                    System.out.println("Tumi randomNumber theke boro Number decho");
-                } else {
-                    System.out.println("Tumi radomNumber Theke soto decho5");
-                   
-                }
-                if(count == 3){
-                    System.out.println("Better luck next Time");
-                }
+            } else if (value > randomNumber && count < 2) {
 
+                System.out.println("You input large Number");
+
+            } else if (randomNumber > value && count < 2) {
+                System.out.println("You input Small Number");
             }
+            if (count == 2) {
+                System.err.println("You lost the game");
+            }
+            count++;
         }
-
     }
 
 }
