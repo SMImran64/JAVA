@@ -72,18 +72,18 @@ public class DateMonthYearUsingWitch {
                 System.out.println("Invalid Number");
         }
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            if (month == 1 && date > 32
-                    || month == 2 && date > 30
-                    || month == 3 && date > 32
-                    || month == 4 && date > 31
-                    || month == 5 && date > 32
-                    || month == 6 && date > 31
-                    || month == 7 && date > 32
-                    || month == 8 && date > 32
-                    || month == 9 && date > 31
-                    || month == 10 && date > 32
-                    || month == 11 && date > 31
-                    || month == 12 && date > 32) {
+            if (month == 1 && date > 31
+                    || month == 2 && date > 29
+                    || month == 3 && date > 31
+                    || month == 4 && date > 30
+                    || month == 5 && date > 31
+                    || month == 6 && date > 30
+                    || month == 7 && date > 31
+                    || month == 8 && date > 31
+                    || month == 9 && date > 30
+                    || month == 10 && date > 31
+                    || month == 11 && date > 30
+                    || month == 12 && date > 31) {
 
                 System.out.println("Date Error");
                 System.exit(0);

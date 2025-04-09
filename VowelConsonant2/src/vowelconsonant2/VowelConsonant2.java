@@ -15,8 +15,13 @@ public class VowelConsonant2 {
             || letter == 'o' || letter == 'u') {
 
             System.out.println(letter + " is a vowel");
-        } else {
-            System.out.println(letter + " is a consonant");
+        }
+        else if(letter >='a'|| letter >= 'z'){
+            System.out.println(letter+" is a Consonant");
+        }
+        
+        else {
+            System.err.println(letter + " is not a letter");
         }
     }
 

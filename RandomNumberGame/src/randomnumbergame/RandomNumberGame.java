@@ -11,7 +11,7 @@ public class RandomNumberGame {
 
         int count = 0;
 
-        while (count <= 3) {
+        while (count < 3) {
             System.out.println("Enter Your Guess Number b2in 0-9 max three times");
             int value = g.nextInt();
 
@@ -25,7 +25,11 @@ public class RandomNumberGame {
                 if (value > randomNumber) {
                     System.out.println("Tumi randomNumber theke boro Number decho");
                 } else {
-                    System.out.println("Tumi randomNumber Theke sodo Number dechO");
+                    System.out.println("Tumi radomNumber Theke soto decho5");
+                   
+                }
+                if(count == 3){
+                    System.out.println("Better luck next Time");
                 }
 
             }

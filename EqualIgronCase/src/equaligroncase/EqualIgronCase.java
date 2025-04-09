@@ -20,8 +20,11 @@ public class EqualIgronCase {
             
             System.out.println(letter+" is vowel");        
         }
+        else if(letter == "a" && letter == "z"){
+            System.out.println(letter+" is a consonant");
+        }
         else{
-            System.out.println(letter+" is consonant");
+            System.err.println(letter+" is not a letter");
         }
         
     }
