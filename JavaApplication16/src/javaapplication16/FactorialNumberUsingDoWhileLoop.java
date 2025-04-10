@@ -18,7 +18,7 @@ public class FactorialNumberUsingDoWhileLoop {
 
         if (input < 0) {
 
-            System.out.println("Enter positive Number ");
+            System.out.println("Mathmatical Erorr");
         } else {
 
             do {

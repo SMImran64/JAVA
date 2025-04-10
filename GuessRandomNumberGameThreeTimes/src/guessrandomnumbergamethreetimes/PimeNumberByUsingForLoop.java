@@ -16,6 +16,8 @@ public class PimeNumberByUsingForLoop {
         System.out.println("Enter a number");
         
         int prime = p.nextInt();
+        
+        
          int count = 0;
         
         for(int i = 1 ; i<= prime ; i++){
