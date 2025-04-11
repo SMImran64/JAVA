@@ -58,7 +58,8 @@ public class DateMonthYearFindWithLeapYearByUsingSwitch {
                 result = "December";
                 break;
             default:
-                System.out.println("Out of Range");
+                System.out.println("Month is out Range");
+                System.exit(0);
         }
 
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
