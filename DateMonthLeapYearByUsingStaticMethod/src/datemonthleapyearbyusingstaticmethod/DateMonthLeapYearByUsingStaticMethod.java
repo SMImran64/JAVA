@@ -20,106 +20,109 @@ public class DateMonthLeapYearByUsingStaticMethod {
         
         int date = l.nextInt();
 
-        String vMonth = dateMonthLeapYear(date, month, year);
+        String result = dateMonthLeapYear(date, month, year);
 
-        System.out.println(vMonth);
+        System.out.println(result);
 
     }
 
     public static String dateMonthLeapYear(int date, int month, int year) {
 
-        String vMonth = "";
+//        String result = "";
         
         
 
         String result = "";
+        
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+
+            if (month == 1 && date > 31
+                    || month == 2 && date > 29
+                    || month == 3 && date > 31
+                    || month == 4 && date > 30
+                    || month == 5 && date > 31
+                    || month == 6 && date > 30
+                    || month == 7 && date > 31
+                    || month == 8 && date > 31
+                    || month == 9 && date > 30
+                    || month == 10 && date > 31
+                    || month == 11 && date > 30
+                    || month == 12 && date > 31) {
+
+                result = "Invalid date";
+                
+                System.exit(0);
+
+            } else {
+                result = result +"" + date +","+year;
+            }
+
+        } else if(month == 1 && date > 31
+                || month == 2 && date > 28
+                || month == 3 && date > 31
+                || month == 4 && date > 30
+                || month == 5 && date > 31
+                || month == 6 && date > 30
+                || month == 7 && date > 31
+                || month == 8 && date > 31
+                || month == 9 && date > 30
+                || month == 10 && date > 31
+                || month == 11 && date > 30
+                || month == 12 && date > 31){        
+        
+                result = "Invalid Date";
+        }
+        
+        else{
+        result = result +"" + date +","+year;
+        }
+
 
         switch (month) {
             case 1:
-                vMonth = "January";
+                result = "January";
                 break;
             case 2:
-                vMonth = "February";
+                result = "February";
                 break;
             case 3:
-                vMonth = "March";
+                result = "March";
                 break;
             case 4:
-                vMonth = "April";
+                result = "April";
                 break;
             case 5:
-                vMonth = "May";
+                result = "May";
                 break;
             case 6:
-                vMonth = "June";
+                result = "June";
                 break;
             case 7:
-                vMonth = "July";
+                result = "July";
                 break;
             case 8:
-                vMonth = "August";
+                result = "August";
                 break;
             case 9:
-                vMonth = "September";
+                result = "September";
                 break;
             case 10:
-                vMonth = "October";
+                result = "October";
                 break;
             case 11:
-                vMonth = "November";
+                result = "November";
                 break;
             case 12:
-                vMonth = "December";
+                result = "December";
                 break;
 
             default:
-                vMonth = "Invalid Month";
+                result = "Invalid Month";
 
                 System.exit(0);
         }
 
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-
-            if (month == 1 && date < 31
-                    || month == 2 && date < 29
-                    || month == 3 && date < 31
-                    || month == 4 && date < 30
-                    || month == 5 && date < 31
-                    || month == 6 && date < 30
-                    || month == 7 && date < 31
-                    || month == 8 && date < 31
-                    || month == 9 && date < 30
-                    || month == 10 && date < 31
-                    || month == 11 && date < 30
-                    || month == 12 && date < 31) {
-
-                result = "Invalid date";
-
-            } else {
-                result = date + "";
-            }
-
-        } else { 
-                if(month == 1 && date < 31
-                || month == 2 && date < 28
-                || month == 3 && date < 31
-                || month == 4 && date < 30
-                || month == 5 && date < 31
-                || month == 6 && date < 30
-                || month == 7 && date < 31
-                || month == 8 && date < 31
-                || month == 9 && date < 30
-                || month == 10 && date < 31
-                || month == 11 && date < 30
-                || month == 12 && date < 31) {
-            
-            result = "Invalid date";
-
-        }
-        }
         
-        result = vMonth +" " + date +","+year ;
-
         return result;
     }
 
