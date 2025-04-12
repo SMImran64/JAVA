@@ -1,8 +1,8 @@
-package datemonthleapyearbyusingstaticmethod;
+package datenMonthleapyearbyusingstaticmethod;
 
 import java.util.Scanner;
 
-public class DateMonthLeapYearByUsingStaticMethod {
+public class DatenMonthLeapYearByUsingStaticMethod {
 
     public static void main(String[] args) {
 
@@ -11,118 +11,114 @@ public class DateMonthLeapYearByUsingStaticMethod {
         System.out.println("Enter a Year");
 
         int year = l.nextInt();
-        
-        System.out.println("Enter month");
-        
-        int month = l.nextInt();
-        
+
+        System.out.println("Enter nMonth");
+
+        int nMonth = l.nextInt();
+
         System.out.println("Enter date");
-        
+
         int date = l.nextInt();
 
-        String result = dateMonthLeapYear(date, month, year);
+        String result = datenMonthLeapYear(date, nMonth, year);
 
         System.out.println(result);
 
     }
 
-    public static String dateMonthLeapYear(int date, int month, int year) {
+    public static String datenMonthLeapYear(int date, int nMonth, int year) {
 
 //        String result = "";
-        
-        
-
+        String nnMonth = "";
         String result = "";
-        
+
         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
 
-            if (month == 1 && date > 31
-                    || month == 2 && date > 29
-                    || month == 3 && date > 31
-                    || month == 4 && date > 30
-                    || month == 5 && date > 31
-                    || month == 6 && date > 30
-                    || month == 7 && date > 31
-                    || month == 8 && date > 31
-                    || month == 9 && date > 30
-                    || month == 10 && date > 31
-                    || month == 11 && date > 30
-                    || month == 12 && date > 31) {
+            if (nMonth == 1 && date > 31
+                    || nMonth == 2 && date > 29
+                    || nMonth == 3 && date > 31
+                    || nMonth == 4 && date > 30
+                    || nMonth == 5 && date > 31
+                    || nMonth == 6 && date > 30
+                    || nMonth == 7 && date > 31
+                    || nMonth == 8 && date > 31
+                    || nMonth == 9 && date > 30
+                    || nMonth == 10 && date > 31
+                    || nMonth == 11 && date > 30
+                    || nMonth == 12 && date > 31) {
 
                 result = "Invalid date";
-                
+
                 System.exit(0);
 
             } else {
-                result = result +"" + date +","+year;
+                result = nMonth + "" + date + "," + year;
             }
 
-        } else if(month == 1 && date > 31
-                || month == 2 && date > 28
-                || month == 3 && date > 31
-                || month == 4 && date > 30
-                || month == 5 && date > 31
-                || month == 6 && date > 30
-                || month == 7 && date > 31
-                || month == 8 && date > 31
-                || month == 9 && date > 30
-                || month == 10 && date > 31
-                || month == 11 && date > 30
-                || month == 12 && date > 31){        
-        
-                result = "Invalid Date";
-        }
-        
-        else{
-        result = result +"" + date +","+year;
+        } else if (nMonth == 1 && date > 31
+                || nMonth == 2 && date > 28
+                || nMonth == 3 && date > 31
+                || nMonth == 4 && date > 30
+                || nMonth == 5 && date > 31
+                || nMonth == 6 && date > 30
+                || nMonth == 7 && date > 31
+                || nMonth == 8 && date > 31
+                || nMonth == 9 && date > 30
+                || nMonth == 10 && date > 31
+                || nMonth == 11 && date > 30
+                || nMonth == 12 && date > 31) {
+
+            result = "Invalid Date";
+        } else {
+            result = nMonth + "" + date + "," + year;
         }
 
-
-        switch (month) {
+        switch (nMonth) {
             case 1:
-                result = "January";
+                nnMonth = "January";
                 break;
             case 2:
-                result = "February";
+                nnMonth = "February";
                 break;
             case 3:
-                result = "March";
+                nnMonth = "March";
                 break;
             case 4:
-                result = "April";
+                nnMonth = "April";
                 break;
             case 5:
-                result = "May";
+                nnMonth = "May";
                 break;
             case 6:
-                result = "June";
+                nnMonth = "June";
                 break;
             case 7:
-                result = "July";
+                nnMonth = "July";
                 break;
             case 8:
-                result = "August";
+                nnMonth = "August";
                 break;
             case 9:
-                result = "September";
+                nnMonth = "September";
                 break;
             case 10:
-                result = "October";
+                nnMonth = "October";
                 break;
             case 11:
-                result = "November";
+                nnMonth = "November";
                 break;
             case 12:
-                result = "December";
+                nnMonth = "December";
                 break;
 
             default:
-                result = "Invalid Month";
+                nnMonth = "Invalid Month";
 
                 System.exit(0);
         }
 
-        
+        result = nnMonth + " " + date + "," + year;
+
         return result;
     }
 
