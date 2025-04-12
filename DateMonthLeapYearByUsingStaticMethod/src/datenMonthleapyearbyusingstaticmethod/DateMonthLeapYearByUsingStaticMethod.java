@@ -2,8 +2,8 @@ package datenMonthleapyearbyusingstaticmethod;
 
 import java.util.Scanner;
 
-public class DatenMonthLeapYearByUsingStaticMethod {
-
+public class DateMonthLeapYearByUsingStaticMethod{
+    
     public static void main(String[] args) {
 
         Scanner l = new Scanner(System.in);
@@ -28,7 +28,7 @@ public class DatenMonthLeapYearByUsingStaticMethod {
 
     public static String datenMonthLeapYear(int date, int nMonth, int year) {
 
-//        String result = "";
+
         String nnMonth = "";
         String result = "";
 
