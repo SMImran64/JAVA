@@ -7,9 +7,7 @@ import aboutobjectandclass.sClass.QuadTrangular;
 public class AboutObjectAndClass {
 
    
-    public static void main(String[] args) {
-       
-        
+    public static void main(String[] args) {      
         
        QuadTrangular result = new QuadTrangular(5, 5);
        
