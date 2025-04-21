@@ -2,7 +2,7 @@ package classexampremonthly;
 
 import java.util.Scanner;
 
-public class ClassExamPreMonthly {
+public class PrimeNumber {
 
     public static void main(String[] args) {
 

@@ -2,7 +2,7 @@ package preparationfor1stmonthlyexamincorejava;
 
 import java.util.Scanner;
 
-public class PreparationFor1stMonthlyExamInCoreJava {
+public class PrimeNumber {
 
     public static void main(String[] args) {
         Scanner p = new Scanner(System.in);

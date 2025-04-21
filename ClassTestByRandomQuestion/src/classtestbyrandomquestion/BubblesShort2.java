@@ -8,42 +8,34 @@ public class BubblesShort2 {
     public static void main(String[] args) {
 
         Scanner b = new Scanner(System.in);
-
         System.out.println("Enter your limit");
 
         int limit = b.nextInt();
 
-        int arrayValues[] = new int[limit];
+        int[] userArray = new int[limit];
 
-        for (int item = 0; item < arrayValues.length; item++) {
+        for (int index = 0; index < userArray.length; index++) {
 
-            System.out.println("Enter your Array Value" + (item + 1));
+            System.out.println("Enter your Array value");
+            int userValue = b.nextInt();
 
-            int userInput = b.nextInt();
-
-            arrayValues[item] = userInput;
+            userArray[index] = userValue;
 
         }
+        System.out.println(" " + Arrays.toString(userArray));
 
-        System.out.println(Arrays.toString(arrayValues));
+        for (int r = 0; r < userArray.length - 1; r++) {
+            for (int s = 0; s < userArray.length - r - 1; s++) {
+                if (userArray[s] > userArray[s + 1]) {
 
-        for (int r = 0; r <= arrayValues.length - 1; r++) {
-            for (int s = 0; s <= arrayValues.length - r - 1; s++) {
-
-                if (arrayValues[s] > arrayValues[s + 1]) {
-
-                    int temp = arrayValues[s];
-
-                    arrayValues[s] = arrayValues[s + 1];
-
-                    arrayValues[s + 1] = temp;
+                    int temp = userArray[s];
+                    userArray[s] = userArray[s + 1];
+                    userArray[s + 1] = temp;
 
                 }
-
             }
         }
-        
-        System.out.println("The bubbles Shot is : "+Arrays.toString(arrayValues));
+        System.out.println(" " + Arrays.toString(userArray));
     }
 
 }
