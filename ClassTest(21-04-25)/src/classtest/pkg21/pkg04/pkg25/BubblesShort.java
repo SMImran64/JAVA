@@ -1,4 +1,4 @@
-package preparationfor1stmonthlyexamincorejava;
+ package classtest.pkg21.pkg04.pkg25;
 
 import java.util.Arrays;
 import java.util.Scanner;
