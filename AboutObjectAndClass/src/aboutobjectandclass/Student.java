@@ -1,6 +1,6 @@
 package aboutobjectandclass;
 
-public class Student {
+public class Student extends StudentPermanentAddress {
 
     private String name;
     private String email;
@@ -22,7 +22,7 @@ public class Student {
         this.address = address;
         this.contact = contact;
     }
- 
+
     public Student(String name, int contact) {
         this.name = name;
         this.contact = contact;
@@ -68,8 +68,7 @@ public class Student {
 
     public int getCourseTime() {
         return courseTime;
-    }   
-   
+    }
 
     public void setCourseTime(int courseTime) {
         this.courseTime = courseTime;
@@ -78,7 +77,7 @@ public class Student {
     public String allDataOfStudents() {
 
         String fullInfo = "ID: " + id + "\n" + "Name: " + name + "\n" + "Email: "
-                + email + "\n" + "Course Name: " + courseName + "\n" + "Time: " + courseTime;
+                + email + "\n" + "Course Name: " + courseName + "\n" + "Course Duration: " + courseTime;
 //        System.out.println("ID: "+ id +"\n"+"Name: "+ name+ "\n"+"Email: "
 //                + email+ "Course Name: "+courseName+ "Time: "+ courseTime );
 
@@ -86,10 +85,67 @@ public class Student {
 
     }
 
+    public String getCenterName() {
+        return centerName;
+    }
+
+    public void setCenterName(String centerName) {
+        this.centerName = centerName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getContact() {
+        return contact;
+    }
+
+    public void setContact(int contact) {
+        this.contact = contact;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getSubdistrict() {
+        return subdistrict;
+    }
+
+    public void setSubdistrict(String subdistrict) {
+        this.subdistrict = subdistrict;
+    }
+
+    public int getWordnumber() {
+        return wordnumber;
+    }
+
+    public void setWordnumber(int wordnumber) {
+        this.wordnumber = wordnumber;
+    }
+
+    public String getvill() {
+        return vill;
+    }
+
+    public void setvill(String vill) {
+        this.vill = vill;
+    }
+
     @Override
     public String toString() {
         return "Student{" + "name=" + name + ", email=" + email + ", id=" + id + ", courseName=" + courseName + ", courseTime=" + courseTime + ", centerName=" + centerName + ", address=" + address + ", contact=" + contact + '}';
     }
+
     
-    
+
 }
