@@ -124,4 +124,9 @@
 /NameAndPasswordChequeForLogin/build/
 /ClassTest(21-04-25)/nbproject/private/
 /ClassTest(21-04-25)/build/
+<<<<<<< HEAD
 /PracticeSession/dist/
+=======
+/MonthlyExamQuestionSolution/nbproject/private/
+/MonthlyExamQuestionSolution/build/
+>>>>>>> e7df902580701e61c8da11f53462d5e7cb30c6bb
