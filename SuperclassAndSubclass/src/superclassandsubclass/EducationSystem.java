@@ -1,71 +1,37 @@
-
 package superclassandsubclass;
 
-
 public class EducationSystem {
-    
-    private String buidings;
-    private String classroom;
-    private String teacher;
-    private String books;
-    private String library;
+
+    public String name;
+    public long id;
 
     public EducationSystem() {
     }
 
-    public EducationSystem(String buidings, String classroom, String teacher, String books, String library) {
-        this.buidings = buidings;
-        this.classroom = classroom;
-        this.teacher = teacher;
-        this.books = books;
-        this.library = library;
+    public EducationSystem(String name, long id) {
+        this.name = name;
+        this.id = id;
     }
 
-    public String getBuidings() {
-        return buidings;
+    public String getName() {
+        return name;
     }
 
-    public void setBuidings(String buidings) {
-        this.buidings = buidings;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getClassroom() {
-        return classroom;
+    public long getId() {
+        return id;
     }
 
-    public void setClassroom(String classroom) {
-        this.classroom = classroom;
-    }
-
-    public String getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
-    }
-
-    public String getBooks() {
-        return books;
-    }
-
-    public void setBooks(String books) {
-        this.books = books;
-    }
-
-    public String getLibrary() {
-        return library;
-    }
-
-    public void setLibrary(String library) {
-        this.library = library;
+    public void setId(long id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
-        return "EducationSystem{" + "buidings=" + buidings + ", classroom=" + classroom + ", teacher=" + teacher + ", books=" + books + ", library=" + library + '}';
+        return "EducationSystem{" + "name=" + name + ", id=" + id + '}';
     }
 
-    
-    
 }
