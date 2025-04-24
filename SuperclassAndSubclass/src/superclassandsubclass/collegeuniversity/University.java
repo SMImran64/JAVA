@@ -77,7 +77,7 @@ public class University extends EducationSystem {
 
     public String studentdetails() {
 
-        String value = ("\n Id no: " + id + "\n Name: " + name + "\n Facalty : " + facalty + "\n Departments: " + departments + "\n  Hall " + hall + "\n University : " + university);
+        String value = ("\n Id no: " + id + "\n Name: " + name + "\n Facalty : " + facalty + "\n Departments: " + departments + "\n Hall " + hall + "\n University : " + university);
 
         return value;
     }
