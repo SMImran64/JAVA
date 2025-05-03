@@ -1,9 +1,7 @@
-
 package bankaccountmanagementsystem;
 
+public class SavingAccount extends BankAccount {
 
-public class SavingAccount extends BankAccount{
-    
     private double interestRate;
 
     public SavingAccount(double interestRate) {
@@ -15,29 +13,27 @@ public class SavingAccount extends BankAccount{
         this.interestRate = interestRate;
     }
 
-   public void addInterest(){
-   
-       double interest = balance * interestRate;
-       balance+= interest;
-       
-       System.out.println("Interest amount : "+interest +", New balance after adding Interest: "+balance);
-   
-   }
+    public void addInterest() {
+
+        double interest = balance * interestRate;
+        balance += interest;
+
+        System.out.println("Interest amount : " + interest + ", New balance after adding Interest: " + balance);
+
+    }
 
     @Override
     public boolean withdraw(double amount) {
-         if(amount > 0 && balance >= amount){
-        
+        if (amount > 0 && balance >= amount) {
+
             balance -= amount;
-            System.out.println("Withdraw amount : "+ amount +", New balance after withdraw: "+balance);
+            System.out.println("Withdraw amount : " + amount + ", New balance after withdraw: " + balance);
             return true;
-        }else{
-        
+        } else {
             System.out.println("Insufficient balance");
             return false;
         }
-        
+
     }
-   
-   
-}   
+
+}

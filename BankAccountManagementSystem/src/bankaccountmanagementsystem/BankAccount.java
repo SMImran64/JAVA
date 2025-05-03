@@ -51,6 +51,14 @@ public class BankAccount {
     
         return accountNumber;
     }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public void setAccountHolderName(String accountHolderName) {
+        this.accountHolderName = accountHolderName;
+    }
     
     
     
