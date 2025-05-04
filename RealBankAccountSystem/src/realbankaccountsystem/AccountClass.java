@@ -1,12 +1,11 @@
-
 package realbankaccountsystem;
 
+public abstract class AccountClass {
 
-public class AccountClass {
-    
     protected String accountNumber;
     protected long balance;
 
+  
     public AccountClass() {
     }
 
@@ -30,39 +29,9 @@ public class AccountClass {
     public void setBalance(long balance) {
         this.balance = balance;
     }
-    
-    public void deposit(int amount){
-     if(amount > 0){
-        
-            balance += amount;
-            System.out.println("Deposit: "+amount +", New balance: "+balance);
-        }else{
-        
-            System.out.println("Invalid deposit amount");
-        
-        }
-    }
-    
-    public boolean withDraw(int amount){
-    
-       if(amount > 0 && balance >= amount){
-        
-            balance -= amount;
-            System.out.println("Withdraw amount : "+ amount +", New balance after withdraw: "+balance);
-            return true;
-        }else{
-        
-            System.out.println("Insufficient balance");
-            return false;
-        }
-    
-    }
-    
-    public void accountDetails(){
-    
-        System.out.println("Account Number: "+accountNumber);
-        System.out.println("Balance  : "+balance);
-        
-    
-    }
+ 
+    public abstract String deposit(double amount);
+    public abstract String withdraw(double amount);
+    public abstract String printDetails();
+   
 }
