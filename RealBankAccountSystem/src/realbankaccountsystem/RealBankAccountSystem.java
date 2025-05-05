@@ -4,29 +4,26 @@ public class RealBankAccountSystem {
 
     public static void main(String[] args) {
 
-        SavingAccount savings = new SavingAccount(0.10, "Imran29", 500);
-//        CurrentAccount current = new CurrentAccount("CA1002", 500.0, 2000.0);
-//
-        // Demonstrate SavingsAccount operations
-        System.out.println("=== Savings Account Operations ===");
-       
-        System.out.println(savings.deposit(500.0));
-        savings.setInterestRate(0.10);
-        
-        System.out.println(savings.addInterestAmount());
-        System.out.println(savings.withdraw(200.0));
-        System.out.println(savings.withdraw(2000.0)); // Should fail
-        System.out.println(savings.printDetails());
-//
-//        System.out.println("\n=== Current Account Operations ===");
-//        System.out.println(current.printDetails());
-//        System.out.println(current.deposit(1000.0));
-//        System.out.println(current.withdraw(2000.0)); // Within overdraft limit
-//        System.out.println(current.withdraw(1000.0)); // Should fail
-//        System.out.println(current.printDetails());
+        CurrentAccount c = new CurrentAccount();
 
-       
-       
+        c.setAccountNumber("Imran12");
+        c.setBalance(50000);
+
+        System.out.println(" Account Number: " + c.getAccountNumber());
+        c.deposit(50000);
+        c.setOverdraftLimit(20000);
+        System.out.println("overdraft limit amount: " + c.getOverdraftLimit());
+        c.withdrew(80000);
+
+        System.out.println("Final Balance: " + c.getBalance());
+        
+        SavingAccount s = new SavingAccount();
+        
+        s.setAccountNumber("Imran29");
+        s.setBalance(50000);
+        s.setInterestRate(0.10);
+        s.addInterestAmount();
+        System.out.println(s.getBalance());
 
     }
 

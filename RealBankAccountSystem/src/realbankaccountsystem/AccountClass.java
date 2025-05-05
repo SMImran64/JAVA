@@ -1,11 +1,10 @@
 package realbankaccountsystem;
 
-public abstract class AccountClass {
+public class AccountClass {
 
     protected String accountNumber;
     protected long balance;
 
-  
     public AccountClass() {
     }
 
@@ -23,15 +22,33 @@ public abstract class AccountClass {
     }
 
     public long getBalance() {
-        return balance;
+        return balance ;
     }
 
     public void setBalance(long balance) {
         this.balance = balance;
     }
- 
-    public abstract String deposit(double amount);
-    public abstract String withdraw(double amount);
-    public abstract String printDetails();
-   
+    
+    public void deposit(int amount){
+    
+        if(amount > 0){
+        
+            balance += amount;
+        
+        }
+        
+    
+    }
+    public boolean withdrew(int amount){
+    
+        return true;
+     
+    }
+    public String printDetails(){
+    
+        return "Account Number: "+accountNumber;
+        
+    }
+    
+
 }

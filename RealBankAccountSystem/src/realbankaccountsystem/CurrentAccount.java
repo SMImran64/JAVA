@@ -27,40 +27,34 @@ public class CurrentAccount extends AccountClass{
     }
 
     @Override
-    public String deposit(double amount) {
-         if (amount > 0) {
-
-            balance += amount;
-            return"deposited : "+amount+"New balance: "+ balance;
-
-        } else {
-
-            return "Invalid Deposit Amount";
-        }
-    }
-
-    @Override
-    public String withdraw(double amount) {
+    public boolean withdrew(int amount) {
         
-        if(amount > 0 && (balance-amount)>= -overdraftLimit){
         
-            balance -= amount;
+        if(amount > 0 && (balance - amount)>= -overdraftLimit){
+        
+            balance -=amount;
             
-            return"Withdrew: "+amount+"New Balance: "+balance;
+            System.out.println("Withdrew amount: "+amount);
+            
+            System.out.println("New Balance After withdrew: "+balance);
+        return true;
+        }else{
         
+            System.out.println("Withdrew amount exceeds overdraft limit");
+        return false;
         }
-        
-        return "Withdrew is over from the overDraft Limit";
     }
 
     @Override
     public String printDetails() {
-        
-        return "Account Number: "+accountNumber+"Balance : "+balance+"OverDraft Limit: "+overdraftLimit;
+        return super.printDetails(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
-    
 
     
+
+   
+
+   
 
     
 
