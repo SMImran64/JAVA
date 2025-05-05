@@ -46,17 +46,13 @@ public class CurrentAccount extends AccountClass{
     }
 
     @Override
-    public String printDetails() {
-        return super.printDetails(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    public void deposit(int amount) {
+        super.deposit(amount); 
     }
 
-    
-
+    @Override
+    public String printDetails() {
+        return super.printDetails()+"\n Over draft limit: "+overdraftLimit; 
+    }
    
-
-   
-
-    
-
-    
 }

@@ -1,11 +1,9 @@
-
-
-package xamtaken4maybysir;
-
+package oopinheritancequestion2;
 
 public class Person {
-    protected String name;
-    protected int age;
+
+    public String name;
+    public int age;
 
     public Person() {
     }
@@ -31,15 +29,9 @@ public class Person {
         this.age = age;
     }
 
-    public void studentDetails(){    
-        System.out.println("Student Name: "+name);
-        System.out.println("Age         : "+age);
-    
+    public String studentDetails() {
+
+        return "\n Student Name: " + name + "\n Student Age: " + age;
     }
-   
-//    public String studentDetails(){
-//        return "Student Name: "+name + "\n Student Age: "+age+"\n Student Id: ";
-//    }
-    
-    
+
 }

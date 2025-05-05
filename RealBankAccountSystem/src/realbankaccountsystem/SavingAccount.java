@@ -30,7 +30,14 @@ public class SavingAccount extends AccountClass{
         
         balance += interest;
     
-        return "New balance after interest: "+balance;
+        return "Interest Amount: "+interest+"New balance after interest: "+balance;
     }
+
+    @Override
+    public void deposit(int amount) {
+        super.deposit(amount); 
+    }
+    
+    
   
 }

@@ -46,7 +46,7 @@ public class AccountClass {
     }
     public String printDetails(){
     
-        return "Account Number: "+accountNumber;
+        return "\n Account Number: "+accountNumber+"\n Final Balance: "+balance;
         
     }
     

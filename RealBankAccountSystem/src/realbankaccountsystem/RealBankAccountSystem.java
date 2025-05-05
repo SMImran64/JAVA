@@ -17,13 +17,17 @@ public class RealBankAccountSystem {
 
         System.out.println("Final Balance: " + c.getBalance());
         
-        SavingAccount s = new SavingAccount();
-        
-        s.setAccountNumber("Imran29");
-        s.setBalance(50000);
-        s.setInterestRate(0.10);
-        s.addInterestAmount();
-        System.out.println(s.getBalance());
+//        SavingAccount s = new SavingAccount();
+//        
+//        s.setAccountNumber("Imran29");
+//        System.out.println(s.getAccountNumber());
+//        s.setBalance(50000);
+//        System.out.println("Balance before adding Interest: "+s.getBalance());
+//        s.deposit(25000);
+//        System.out.println("Deposite Amount: "+s.getBalance());
+//        s.setInterestRate(0.10);
+//        s.addInterestAmount();
+//        System.out.println("Final Amount After Adding Interest: "+s.printDetails());
 
     }
 
