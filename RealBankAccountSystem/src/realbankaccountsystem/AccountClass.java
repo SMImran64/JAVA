@@ -22,33 +22,33 @@ public class AccountClass {
     }
 
     public long getBalance() {
-        return balance ;
+        return balance;
     }
 
     public void setBalance(long balance) {
         this.balance = balance;
     }
-    
-    public void deposit(int amount){
-    
-        if(amount > 0){
-        
+
+    public void deposit(int amount) {
+
+        if (amount > 0) {
+
             balance += amount;
-        
+
         }
-        
-    
+
     }
-    public boolean withdrew(int amount){
-    
+
+    public boolean withdrew(int amount) {
+
         return true;
-     
+
     }
-    public String printDetails(){
-    
-        return "\n Account Number: "+accountNumber+"\n Final Balance: "+balance;
-        
+
+    public String printDetails() {
+
+        return "\n Account Number: " + accountNumber + "\n Final Balance: " + balance;
+
     }
-    
 
 }

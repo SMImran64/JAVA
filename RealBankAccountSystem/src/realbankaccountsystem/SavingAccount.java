@@ -23,19 +23,27 @@ public class SavingAccount extends AccountClass{
     public void setInterestRate(double interestRate) {
         this.interestRate = interestRate;
     }
+
+    public long getBalance() {
+        return balance;
+    }
+
+    public void setBalance(long balance) {
+        this.balance = balance;
+    }
     
-    public String addInterestAmount(){
     
-        double interest = balance * interestRate;
-        
-        balance += interest;
+    public double addInterestAmount(){
     
-        return "Interest Amount: "+interest+"New balance after interest: "+balance;
+        balance = (long) (balance+(balance*interestRate));
+    
+        return balance;
     }
 
     @Override
     public void deposit(int amount) {
-        super.deposit(amount); 
+        
+        balance += amount;
     }
     
     

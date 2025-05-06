@@ -1,9 +1,7 @@
-
 package realbankaccountsystem;
 
+public class CurrentAccount extends AccountClass {
 
-public class CurrentAccount extends AccountClass{
-    
     protected double overdraftLimit;
 
     public CurrentAccount() {
@@ -28,31 +26,31 @@ public class CurrentAccount extends AccountClass{
 
     @Override
     public boolean withdrew(int amount) {
-        
-        
-        if(amount > 0 && (balance - amount)>= -overdraftLimit){
-        
-            balance -=amount;
-            
-            System.out.println("Withdrew amount: "+amount);
-            
-            System.out.println("New Balance After withdrew: "+balance);
-        return true;
-        }else{
-        
+
+        if (amount > 0 && (balance - amount) >= -overdraftLimit) {
+
+            balance -= amount;
+
+            System.out.println("Withdrew amount: " + amount);
+
+            System.out.println("New Balance After withdrew: " + balance);
+            return true;
+        } else {
+
             System.out.println("Withdrew amount exceeds overdraft limit");
-        return false;
+            return false;
         }
     }
 
     @Override
     public void deposit(int amount) {
-        super.deposit(amount); 
+
+        balance += amount;
     }
 
     @Override
     public String printDetails() {
-        return super.printDetails()+"\n Over draft limit: "+overdraftLimit; 
+        return super.printDetails() + "\n Over draft limit: " + overdraftLimit;
     }
-   
+
 }
