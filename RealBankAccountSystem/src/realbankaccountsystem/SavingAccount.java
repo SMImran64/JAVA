@@ -45,6 +45,11 @@ public class SavingAccount extends AccountClass{
         
         balance += amount;
     }
+
+    @Override
+    public boolean withdrew(int amount) {
+        return super.withdrew(amount); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
     
     
   

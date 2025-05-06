@@ -36,9 +36,7 @@ public class AccountClass {
             balance += amount;
 
         }
-
     }
-
     public boolean withdrew(int amount) {
 
         return true;

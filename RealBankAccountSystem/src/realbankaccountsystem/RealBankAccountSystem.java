@@ -10,7 +10,7 @@ public class RealBankAccountSystem {
         c.setBalance(50000);
 
         System.out.println(" Account Number: " + c.getAccountNumber());
-        System.out.println("Balance: " + c.getBalance());
+        System.out.println("Beginning Balance: " + c.getBalance());
         c.deposit(50000);
         System.out.println("Balance after adding deposit: "+c.getBalance());
         c.setOverdraftLimit(20000);
@@ -19,18 +19,7 @@ public class RealBankAccountSystem {
 
         System.out.println("Final Balance: " + c.getBalance());
 
-//        SavingAccount s = new SavingAccount();
-//        
-//        s.setAccountNumber("Imran29");
-//        System.out.println(s.getAccountNumber());
-//        s.setBalance(50000);
-//        System.out.println("Balance before adding Interest: "+s.getBalance());
-//        s.deposit(25000);
-//        System.out.println("Deposite Amount: "+s.getBalance());
-//        System.out.println(s.getBalance());
-//        s.setInterestRate(0.10);
-//        s.addInterestAmount();
-//        System.out.println("Final Amount After Adding Interest: "+s.printDetails());
+
     }
 
 }
