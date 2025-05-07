@@ -27,6 +27,7 @@ public class SavingAccount extends AccountClass{
     public long getBalance() {
         return balance;
     }
+    
 
     public void setBalance(long balance) {
         this.balance = balance;

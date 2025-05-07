@@ -45,12 +45,20 @@ public class CurrentAccount extends AccountClass {
     @Override
     public void deposit(int amount) {
 
+        double deposit = amount;
+
         balance += amount;
+
+        System.out.println("Balance after deposit: " + balance);
+
     }
 
     @Override
-    public String printDetails() {
-        return super.printDetails() + "\n Over draft limit: " + overdraftLimit;
+    public void printDetails() {
+        super.printDetails();
+        super.deposit()
     }
+
+    
 
 }
