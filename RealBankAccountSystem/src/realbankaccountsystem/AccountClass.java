@@ -4,14 +4,14 @@ public class AccountClass {
 
     protected String accountNumber;
     protected long balance;
+    protected long amount;
 
-    public AccountClass() {
-    }
-
-    public AccountClass(String accountNumber, long balance) {
+    public AccountClass(String accountNumber, long balance, long amount) {
         this.accountNumber = accountNumber;
         this.balance = balance;
+        this.amount = amount;
     }
+
 
     public String getAccountNumber() {
         return accountNumber;
@@ -29,24 +29,37 @@ public class AccountClass {
         this.balance = balance;
     }
 
-    public void deposit(int amount) {
+    public long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(long amount) {
+        this.amount = amount;
+    }
+    
+    
+
+    public long deposit() {
 
         if (amount > 0) {
 
-            balance += amount;
-
+           return balance += amount;
+        }
+        else{
+            return balance;
         }
     }
     public boolean withdrew(int amount) {
-
         return true;
-
     }
 
-    public String printDetails() {
-
-        return "\n Account Number: " + accountNumber + "\n Final Balance: " + balance;
-
+  
+    public void printDetails() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Balance: " + balance);
     }
+    
+ 
 
 }
+
