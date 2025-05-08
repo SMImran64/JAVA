@@ -2,10 +2,13 @@ package atmmachinebyusingcorejava;
 
 public class ATMMachine extends BankAccountClass {
 
-    public ATMMachine(double balance, int pin) {
-        super(balance, pin);
+    public ATMMachine() {
     }
 
+    public ATMMachine(String accountHolderName, String accountNumber, long balance, int pin) {
+        super(accountHolderName, accountNumber, balance, pin);
+    }
+   
     // Method to change the  PIN Number
     public void changePin(int oldPin, int newPin) {
         if (verifyPin(oldPin)) {
