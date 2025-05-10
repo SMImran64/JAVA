@@ -1,6 +1,7 @@
 
 package learnobjectandclass;
 
+import hashcodemethod.StudentStutus;
 import java.util.Scanner;
 
 
