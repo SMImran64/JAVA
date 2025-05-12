@@ -1,13 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package midlevelquestion12;
 
-/**
- *
- * @author Admin
- */
+
 public class AccountCategory {
+    
+    public static void main(String[] args) {
+        
+        
+        RegularAccountHolder regular = new RegularAccountHolder();
+        regular.setAccountNumber("Imran29");
+        regular.setName("Muhammad Imran Hossain");
+        System.out.println("\n "+regular.getAccountNumber()+"\n "+regular.getName());
+     
+        System.out.println(" The transaction Fee: "+regular.calculateTransactionFee(20000));
+        
+        
+        PremiumAccountHolder primium = new PremiumAccountHolder("Faruk Ahmed", "F124K");
+        
+        System.out.println("\n "+primium.getAccountNumber()+"\n "+primium.getName());
+        System.out.println(" The Transaction Fee After Discount: "+primium.calculateTransactionFee(20000));
+    }
+
+   
     
 }

@@ -30,10 +30,13 @@ public class Rectangular extends Shape {
     }
 
     @Override
-    double area() {
+    public void area() {
 
-        return height * weight;
+        System.out.println("\n The Area of Retangular: "+(height * weight));
+
     }
+
+    
 
     @Override
     public String toString() {

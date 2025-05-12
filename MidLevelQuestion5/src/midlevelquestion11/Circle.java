@@ -20,9 +20,14 @@ public class Circle extends Shape {
     }
 
     @Override
-    double area() {
-        return Math.PI * Math.pow(redious, 2);
+    public void area() {
+
+        System.out.println("\n The Area of Circle: "+(Math.PI*Math.pow(redious, 2)));
     }
+
+    
+
+   
 
     @Override
     public String toString() {

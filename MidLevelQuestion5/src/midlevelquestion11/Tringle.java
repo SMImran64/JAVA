@@ -30,11 +30,12 @@ public class Tringle extends Shape {
     }
 
     @Override
-    double area() {
+    public void area() {
 
-        return 0.5 * height * floor;
-
+        System.out.println("\n The Area of Trigle: "+(0.5 * height * floor));
     }
+
+    
 
     @Override
     public String toString() {
