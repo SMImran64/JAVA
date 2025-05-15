@@ -1,22 +1,23 @@
-
 package com.mycompany.threatmethod2;
 
+public class PrintChar implements Runnable {
 
-public class PrintChar implements Runnable{
-    
     private String letter;
+    private int times;
 
-    public PrintChar() {
-    }
-
-    public PrintChar(String letter) {
+    public PrintChar(String letter, int times) {
         this.letter = letter;
+        this.times = times;
     }
 
     @Override
     public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+
+        for (int i = 0; i < this.times; i++) {
+
+            System.out.print(letter);
+
+        }
     }
-    
-    
+
 }
