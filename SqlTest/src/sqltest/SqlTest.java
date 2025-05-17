@@ -14,7 +14,7 @@ public class SqlTest {
         
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/sys", "root", "1234");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/studentinfo", "root", "1234");
             PreparedStatement ps = connection.prepareStatement("Select * from students ");
             ResultSet rs = ps.executeQuery();
             
