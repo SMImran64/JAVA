@@ -120,7 +120,7 @@ public class StudentsInfo extends javax.swing.JFrame {
         });
         jPanel2.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 353, -1, 30));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, 300, 1140, 580));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, -30, 1140, 910));
 
         pack();
         setLocationRelativeTo(null);
