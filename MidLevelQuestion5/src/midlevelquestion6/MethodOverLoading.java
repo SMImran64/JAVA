@@ -2,7 +2,7 @@
 package midlevelquestion6;
 
 
-public class Geomatric {
+public class MethodOverLoading {
     public static void main(String[] args) {
         
         Triangle t = new Triangle(40, 60);
