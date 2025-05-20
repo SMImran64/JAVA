@@ -39,9 +39,7 @@ public class Vehicle {
         this.color = color;
     }
 
-    public double getSalePrice() {
-
-        return regularPrice;
+    public void getSalePrice() {       
 
     }
 

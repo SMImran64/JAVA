@@ -24,43 +24,27 @@ public class Truck extends Vehicle {
         this.weight = weight;
     }
 
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public double getRegularPrice() {
-        return regularPrice;
-    }
-
-    public void setRegularPrice(double regularPrice) {
-        this.regularPrice = regularPrice;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     @Override
-    public double getSalePrice() {
+    public void getSalePrice() {
         double result = 0;
+        double discount = 0;
         if (this.weight > 2000) {
 
-            result = regularPrice - (regularPrice * 0.1);
-
+            discount = (regularPrice * 0.1);
+            result = (regularPrice - discount);
+            
+            System.out.println("Your Discount amount : "+discount);
+            
+            System.out.println("Your Actual Payable amount : "+ result);
         } else {
 
-            result = regularPrice;
+            System.err.println("You cannot get discount!!!");
+            System.out.println("Your Payable amount is : "+regularPrice);
         }
 
-        return result;
+       
     }
+
+   
 
 }

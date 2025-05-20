@@ -1,6 +1,6 @@
 package midlevelquestion10;
 
-public class EmployeeManagementSystem {
+public class EmployeeManagementSystemWithAbstractMethod {
 
     public static void main(String[] args) {
         FullTimeEmployee emp1 = new FullTimeEmployee(25000, "Imran", 5001, 25000);
