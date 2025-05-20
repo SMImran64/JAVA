@@ -27,18 +27,17 @@ public class PosView extends javax.swing.JFrame {
         customerDaw.showAllCustomer(tblCustomer);
         
     }
-    
+
     // Reset customer text fields
-    
-    public void resetCustomer(){
-    
-         txtCustomerId.setText("");
+    public void resetCustomer() {
+        
+        txtCustomerId.setText("");
         txtCustomerName.setText("");
         txtCustomerEmail.setText("");
         txtCustomerCell.setText("");
-        txtCustomerAddress.setText("");    
-    
-    
+        txtCustomerAddress.setText("");
+        btnCustomerSave.setVisible(true);
+        
     }
 
     /**
@@ -90,6 +89,7 @@ public class PosView extends javax.swing.JFrame {
         btnCustomerDelete = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCustomer = new javax.swing.JTable();
+        btnCustomerSearch = new javax.swing.JButton();
         tapSupplier = new javax.swing.JTabbedPane();
         jPanel9 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
@@ -152,6 +152,11 @@ public class PosView extends javax.swing.JFrame {
         btnCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnCustomerMouseClicked(evt);
+            }
+        });
+        btnCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustomerActionPerformed(evt);
             }
         });
 
@@ -270,7 +275,7 @@ public class PosView extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2)
-                .addContainerGap(812, Short.MAX_VALUE))
+                .addContainerGap(903, Short.MAX_VALUE))
         );
 
         tapHome.addTab("tab1", jPanel7);
@@ -300,8 +305,6 @@ public class PosView extends javax.swing.JFrame {
 
         jLabel10.setText("Id No. ");
 
-        txtCustomerId.setEditable(false);
-
         jLabel11.setText("Name");
 
         jLabel12.setText("Address");
@@ -311,6 +314,11 @@ public class PosView extends javax.swing.JFrame {
         jLabel14.setText("Email Address");
 
         btnCustomerEdit.setText("Edit");
+        btnCustomerEdit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCustomerEditMouseClicked(evt);
+            }
+        });
 
         btnCustomerSave.setText("Save");
         btnCustomerSave.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -351,6 +359,13 @@ public class PosView extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblCustomer);
 
+        btnCustomerSearch.setText("Search");
+        btnCustomerSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCustomerSearchMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
@@ -382,11 +397,13 @@ public class PosView extends javax.swing.JFrame {
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtCustomerName))
+                                .addComponent(txtCustomerName, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtCustomerId, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtCustomerId)))
+                        .addGap(43, 43, 43)
+                        .addComponent(btnCustomerSearch)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel16Layout.createSequentialGroup()
@@ -407,7 +424,8 @@ public class PosView extends javax.swing.JFrame {
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCustomerId, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCustomerCell, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCustomerCell, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCustomerSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -515,7 +533,7 @@ public class PosView extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addGap(150, 150, 150)
                 .addComponent(jLabel6)
-                .addContainerGap(712, Short.MAX_VALUE))
+                .addContainerGap(803, Short.MAX_VALUE))
         );
 
         tapPurchase.addTab("tab1", jPanel11);
@@ -538,7 +556,7 @@ public class PosView extends javax.swing.JFrame {
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addGap(132, 132, 132)
                 .addComponent(jLabel7)
-                .addContainerGap(730, Short.MAX_VALUE))
+                .addContainerGap(821, Short.MAX_VALUE))
         );
 
         tapSales.addTab("tab1", jPanel12);
@@ -561,7 +579,7 @@ public class PosView extends javax.swing.JFrame {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addGap(206, 206, 206)
                 .addComponent(jLabel8)
-                .addContainerGap(656, Short.MAX_VALUE))
+                .addContainerGap(747, Short.MAX_VALUE))
         );
 
         tapStock.addTab("tab1", jPanel13);
@@ -584,7 +602,7 @@ public class PosView extends javax.swing.JFrame {
             .addGroup(jPanel14Layout.createSequentialGroup()
                 .addGap(128, 128, 128)
                 .addComponent(jLabel9)
-                .addContainerGap(734, Short.MAX_VALUE))
+                .addContainerGap(825, Short.MAX_VALUE))
         );
 
         tapReport.addTab("tab1", jPanel14);
@@ -598,33 +616,26 @@ public class PosView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseClicked
-
+        
         tapMain.setSelectedIndex(0);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnHomeMouseClicked
 
-    private void btnCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerMouseClicked
-
-        tapMain.setSelectedIndex(1);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCustomerMouseClicked
-
     private void btnSupplierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierMouseClicked
-
+        
         tapMain.setSelectedIndex(2);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSupplierMouseClicked
 
     private void btnCategoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryMouseClicked
-
+        
         tapMain.setSelectedIndex(3);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCategoryMouseClicked
 
     private void btnPurchaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPurchaseMouseClicked
-
+        
         tapMain.setSelectedIndex(4);
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPurchaseMouseClicked
@@ -648,28 +659,28 @@ public class PosView extends javax.swing.JFrame {
     }//GEN-LAST:event_btnReportMouseClicked
 
     private void btnCustomerSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerSaveMouseClicked
-
+        
         String name = txtCustomerName.getText().trim();
         String email = txtCustomerEmail.getText().trim();
         String cell = txtCustomerCell.getText().trim();
         String address = txtCustomerAddress.getText().trim();
-      
-        customerDaw.saveCustomer(name, email, cell, address,tblCustomer);
+        
+        customerDaw.saveCustomer(name, email, cell, address, tblCustomer);
         resetCustomer();
-     
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCustomerSaveMouseClicked
 
     private void tblCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCustomerMouseClicked
         
+        btnCustomerSave.setVisible(false);
         int rowIndex = tblCustomer.getSelectedRow();
         String id = tblCustomer.getModel().getValueAt(rowIndex, 0).toString();
         String name = tblCustomer.getModel().getValueAt(rowIndex, 1).toString();
         String email = tblCustomer.getModel().getValueAt(rowIndex, 2).toString();
         String cell = tblCustomer.getModel().getValueAt(rowIndex, 3).toString();
         String address = tblCustomer.getModel().getValueAt(rowIndex, 4).toString();
-
+        
         txtCustomerId.setText(id);
         txtCustomerName.setText(name);
         txtCustomerEmail.setText(email);
@@ -679,18 +690,61 @@ public class PosView extends javax.swing.JFrame {
     }//GEN-LAST:event_tblCustomerMouseClicked
 
     private void btnCustomerResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerResetMouseClicked
-
+        
         resetCustomer();
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCustomerResetMouseClicked
 
     private void btnCustomerDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerDeleteMouseClicked
-
+        
         int id = Integer.parseInt(txtCustomerId.getText());
-        customerDaw.deleteCustomer(WIDTH, tblCustomer);
+        customerDaw.deleteCustomer(id, tblCustomer);
+        
+        resetCustomer();
+        
+        btnCustomerSave.setVisible(true);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCustomerDeleteMouseClicked
+
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
+        
+        tapMain.setSelectedIndex(1);
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnCustomerActionPerformed
+
+    private void btnCustomerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCustomerMouseClicked
+
+    private void btnCustomerEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerEditMouseClicked
+        // TODO add your handling code here:
+        String name = txtCustomerName.getText().trim();
+        String email = txtCustomerEmail.getText().trim();
+        String cell = txtCustomerCell.getText().trim();
+        String address = txtCustomerAddress.getText().trim();
+        int id = Integer.parseInt(txtCustomerId.getText().trim());
+        customerDaw.editCustomer(id, name, email, cell, address, tblCustomer);
+        resetCustomer();
+        btnCustomerSave.setVisible(true);
+    }//GEN-LAST:event_btnCustomerEditMouseClicked
+
+    private void btnCustomerSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCustomerSearchMouseClicked
+        // TODO add your handling code here:
+        
+        int id = Integer.parseInt(txtCustomerId.getText());
+//        
+//        Object[]customers = customerDaw.findCustomerById(id);
+//        
+//        
+//        txtCustomerId.setText(customers[0].toString());
+//        txtCustomerName.setText(name);
+//        txtCustomerEmail.setText(email);
+//        txtCustomerCell.setText(cell);
+//        txtCustomerAddress.setText(address);
+        customerDaw.search(id, tblCustomer);
+    }//GEN-LAST:event_btnCustomerSearchMouseClicked
 
     /**
      * @param args the command line arguments
@@ -734,6 +788,7 @@ public class PosView extends javax.swing.JFrame {
     private javax.swing.JButton btnCustomerEdit;
     private javax.swing.JButton btnCustomerReset;
     private javax.swing.JButton btnCustomerSave;
+    private javax.swing.JButton btnCustomerSearch;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnPurchase;
     private javax.swing.JButton btnReport;

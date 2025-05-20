@@ -79,14 +79,14 @@ public class CustomerDaw {
         }
 
     }
-    
-    public void deleteCustomer(int id,JTable jt){
-        
+
+    public void deleteCustomer(int id, JTable jt) {
+
         String sql = "delete from customers where id = ?";
-    
+
         try {
             ps = util.getCon().prepareStatement(sql);
-            
+
             ps.setInt(1, id);
             ps.executeUpdate();
 
@@ -94,13 +94,104 @@ public class CustomerDaw {
 
             util.getCon().close();
 
-            JOptionPane.showMessageDialog(null, "Customer Details Save Successfully");
+            JOptionPane.showMessageDialog(null, "Customer Details delete Successfully");
             showAllCustomer(jt);
-            
+
         } catch (SQLException ex) {
             Logger.getLogger(CustomerDaw.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
+
+    }
+
+    public void editCustomer(int id, String name, String email, String cell, String address, JTable jt) {
+
+        String sql = " update customers set name = ?,cell = ?,email = ?, address = ? where id = ?";
+
+        try {
+            ps = util.getCon().prepareStatement(sql);
+
+            ps.setString(1, name);
+            ps.setString(2, cell);
+            ps.setString(3, email);
+            ps.setString(4, address);
+            ps.setInt(5, id);
+
+            ps.executeUpdate();
+
+            ps.close();
+
+            util.getCon().close();
+
+            JOptionPane.showMessageDialog(null, "Customer Details Updated Successfully");
+            showAllCustomer(jt);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerDaw.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+//    public Object[] findCustomerById(int id) {
+//
+//        String sql = " select * from customers where id = ?";
+//
+//        try {
+//            ps = util.getCon().prepareStatement(sql);
+//
+//            ps.setInt(1, id);
+//
+//            ResultSet rs = ps.executeQuery();
+//
+//            while (rs.next()) {
+//
+//                return new Object[]{
+//                    rs.getString("name"),
+//                    rs.getString("email"),
+//                    rs.getString("cell"),
+//                    rs.getString("address"),};
+//
+//            }
+//            rs.close();
+//            ps.close();
+//            util.getCon().close();
+//
+//        } catch (SQLException ex) {
+//            Logger.getLogger(CustomerDaw.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//
+//        return null;
+//    }
+    public void search(int id, JTable jt) {
+        String sql = "select * from customers where id=?";
+        try {
+            String[] ColumnName = {"ID", "Name", "Email", "Cell", "Address"};
+
+            DefaultTableModel tableModel = new DefaultTableModel(ColumnName, 0);
+            jt.setModel(tableModel);
+            ps = util.getCon().prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                int id1 = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String cell = rs.getString("cell");
+                String address = rs.getString("address");
+
+                // add row to table model
+                Object[] rowData = {id1, name, email, cell, address};
+
+                tableModel.addRow(rowData);
+            }
+            rs.close();
+            ps.close();
+
+            util.getCon().close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerDaw.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }
