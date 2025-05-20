@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class FileClassTask2 {
 
     public static void main(String[] args) {
-        File f = new File("C:\\Users\\Admin\\Desktop\\test.txt");
+        File f = new File("C:\\Users\\USER\\Desktop\\PreExam");
 
         try {
             Scanner s = new Scanner(f);

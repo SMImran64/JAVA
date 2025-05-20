@@ -15,8 +15,9 @@ public class IntegerTypeValues implements Runnable{
     @Override
     public void run() {
 
-        for(int i = 0; i < nu){
+        for(int i = 0; i < numbers; i++){
         
+            System.out.println("" +i);
         }
 
 

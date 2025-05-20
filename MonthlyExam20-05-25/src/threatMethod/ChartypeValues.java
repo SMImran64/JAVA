@@ -1,13 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package threatMethod;
 
-/**
- *
- * @author USER
- */
-public class ChartypeValues {
+
+public class ChartypeValues implements Runnable{
+    
+    private String letters;
+    private int times;
+
+    public ChartypeValues(String letters, int times) {
+        this.letters = letters;
+        this.times = times;
+    }
+    
+    
+
+    @Override
+    public void run() {
+
+        for(int i = 0 ; )
+
+
+
+    }
     
 }
