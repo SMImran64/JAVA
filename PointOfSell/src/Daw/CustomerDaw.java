@@ -183,7 +183,8 @@ public class CustomerDaw {
                 Object[] rowData = {id1, name, email, cell, address};
 
                 tableModel.addRow(rowData);
-            }
+            }            
+           
             rs.close();
             ps.close();
 

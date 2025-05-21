@@ -5,6 +5,7 @@
 package pointofsell.View;
 
 import Daw.CustomerDaw;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import pos.util.DatabaseUtil;
 
@@ -744,6 +745,8 @@ public class PosView extends javax.swing.JFrame {
 //        txtCustomerCell.setText(cell);
 //        txtCustomerAddress.setText(address);
         customerDaw.search(id, tblCustomer);
+        
+       
     }//GEN-LAST:event_btnCustomerSearchMouseClicked
 
     /**
