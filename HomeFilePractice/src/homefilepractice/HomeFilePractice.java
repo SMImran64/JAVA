@@ -6,16 +6,10 @@ public class HomeFilePractice {
 
     public static void main(String[] args) {
 
-        try {
-            PrintWriter pw = new PrintWriter("C:\\Users\\USER\\Desktop\\sm.txt");          
-            pw.print("Assalmualikum dear friends");
-            pw.print("Here we are gonna to talk about File class in java. This is really essential for all of the student who is begainer of the study of java  ");
+       String s = "ABC";
+        s.toLowerCase();
+        s += "def"; 
+               
+        System.outprintln(s);
 
-            pw.close();
-            
-        } catch (Exception e) {
-            
-        }
     }
-
-}
