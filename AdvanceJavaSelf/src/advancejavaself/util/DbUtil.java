@@ -11,10 +11,10 @@ import java.util.logging.Logger;
 public class DbUtil {
     
     private Connection con = null;
-    private String url ="jdbc:mysql://localhost:3306/";
+    private String url ="jdbc:mysql://localhost:3306/studentinfo";
     private String user = "root";
     private String password ="1234";
-    private String driver = "com:mysql.cj.jdbc.Driver";
+    private String driver = "com.mysql.cj.jdbc.Driver";
     
     public Connection getCon(){
     
