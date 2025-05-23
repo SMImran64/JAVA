@@ -66,6 +66,8 @@ public class CategoryDao {
 
                 tableModel.addRow(rowData);
             }
+            
+            ps.executeQuery();
             rs.close();
             ps.close();
 
@@ -100,7 +102,7 @@ public class CategoryDao {
 
     }
 
-    public void editCustomer(int id, String name, String email, String cell, String address, JTable jt) {
+    public void editCategory(int id, String name, JTable jt) {
 
         String sql = " update category set name = ? where id = ?";
 
@@ -108,7 +110,7 @@ public class CategoryDao {
             ps = util.getCon().prepareStatement(sql);
 
             ps.setString(1, name);           
-            ps.setInt(5, id);
+            ps.setInt(2, id);
 
             ps.executeUpdate();
 
@@ -148,6 +150,7 @@ public class CategoryDao {
                 tableModel.addRow(rowData);
             }            
            
+            ps.executeQuery();
             rs.close();
             ps.close();
 

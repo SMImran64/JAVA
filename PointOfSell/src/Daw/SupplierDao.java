@@ -71,9 +71,11 @@ public class SupplierDao {
 
                 tableModel.addRow(rowData);
             }
+
+            ps.executeQuery();
+
             rs.close();
             ps.close();
-
             util.getCon().close();
 
         } catch (SQLException ex) {
@@ -90,6 +92,7 @@ public class SupplierDao {
             ps = util.getCon().prepareStatement(sql);
 
             ps.setInt(1, id);
+            
             ps.executeUpdate();
 
             ps.close();
@@ -105,7 +108,7 @@ public class SupplierDao {
 
     }
 
-    public void editSupplier(int id, String name, String email, String cell, String address, String contractPerson, JTable jt) {
+    public void editSupplier(int id, String name, String address, String cell, String email, String contractPerson, JTable jt) {
 
         String sql = " update suppliers set name = ?,address = ?,cell = ?,email = ?,contractPerson = ? where id = ?";
 
