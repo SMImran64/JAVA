@@ -1310,6 +1310,8 @@ public class PosView extends javax.swing.JFrame {
 
         btnSupplierSave.setVisible(true);
         resetSupplier();
+        supplierDao.showAllSupplier(tblSupplier);
+        
     }//GEN-LAST:event_btnSupplierEditMouseClicked
 
     private void btnSupplierResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierResetMouseClicked
