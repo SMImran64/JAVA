@@ -26,7 +26,7 @@ CREATE TABLE `category` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Name'),(2,'Name'),(3,'Name'),(4,'Name'),(5,'Rakib');
+INSERT INTO `category` VALUES (5,'Rakib'),(7,'Mango');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +63,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (2,'Abdullah Al Masud','01786555277','abdullahalmasud011@gmail.com','Saver,Dhaka'),(4,'Istiaque','01515203269','junayet03@gmail.com','Mohammadpur'),(9,'','','','');
+INSERT INTO `customers` VALUES (2,'Abdullah Al Masud','01786555277','abdullahalmasud011@gmail.com','Saver,Dhaka'),(4,'Istiaque','01515203269','junayet03@gmail.com','Mohammadpur');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -155,13 +155,14 @@ DROP TABLE IF EXISTS `suppliers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `suppliers` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(100) NOT NULL,
-  `Address` varchar(255) DEFAULT NULL,
-  `Cell` varchar(20) DEFAULT NULL,
-  `Email` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `cell` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `contractPerson` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -170,6 +171,7 @@ CREATE TABLE `suppliers` (
 
 LOCK TABLES `suppliers` WRITE;
 /*!40000 ALTER TABLE `suppliers` DISABLE KEYS */;
+INSERT INTO `suppliers` VALUES (7,'Pran','Mogbazar','654654654','pran@gmail.com','Shimul'),(9,'Ibne Sina','Azimpur','4654654','ibnesina@gamil.com','Shinoayer'),(12,'SoftEven','Mohakhali','4654687','softeven@gmail.com','Eiasin');
 /*!40000 ALTER TABLE `suppliers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -182,4 +184,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-21 19:11:44
+-- Dump completed on 2025-05-24 14:08:22
