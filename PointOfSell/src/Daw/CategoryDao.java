@@ -1,9 +1,11 @@
-
 package Daw;
 
+import entity.Category;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -11,10 +13,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import pos.util.DatabaseUtil;
 
-
 public class CategoryDao {
-    
-     DatabaseUtil util = new DatabaseUtil();
+
+    DatabaseUtil util = new DatabaseUtil();
 
     PreparedStatement ps;
 
@@ -25,7 +26,7 @@ public class CategoryDao {
         try {
             ps = util.getCon().prepareStatement(sql);
 
-            ps.setString(1, name);           
+            ps.setString(1, name);
 
             ps.executeUpdate();
 
@@ -59,14 +60,13 @@ public class CategoryDao {
 
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                
 
                 // add row to table model
                 Object[] rowData = {id, name,};
 
                 tableModel.addRow(rowData);
             }
-            
+
             ps.executeQuery();
             rs.close();
             ps.close();
@@ -109,7 +109,7 @@ public class CategoryDao {
         try {
             ps = util.getCon().prepareStatement(sql);
 
-            ps.setString(1, name);           
+            ps.setString(1, name);
             ps.setInt(2, id);
 
             ps.executeUpdate();
@@ -127,7 +127,6 @@ public class CategoryDao {
 
     }
 
-
     public void search(int id, JTable jt) {
         String sql = "select * from category where id=?";
         try {
@@ -142,14 +141,13 @@ public class CategoryDao {
 
                 int id1 = rs.getInt("id");
                 String name = rs.getString("name");
-               
 
                 // add row to table model
                 Object[] rowData = {id1, name};
 
                 tableModel.addRow(rowData);
-            }            
-           
+            }
+
             ps.executeQuery();
             rs.close();
             ps.close();
@@ -160,5 +158,31 @@ public class CategoryDao {
         }
 
     }
-    
+
+    public List<Category> getAllCategory() {
+
+        List<Category> categoryList = new ArrayList<>();
+
+        String sql = "select * from category";
+
+        try {
+            ps = util.getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                int id = rs.getInt("id");
+
+                String name = rs.getString("name");
+
+                categoryList.add(new Category(id, name));
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CategoryDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        return categoryList;
+    }
+
 }
