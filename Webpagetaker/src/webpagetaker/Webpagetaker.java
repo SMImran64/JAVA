@@ -36,7 +36,7 @@ public class Webpagetaker {
                     result += link.nextLine();
                 }
 
-                File f = new File("C:\\Users\\USER\\Desktop\\ " + file + " .html");
+                File f = new File("C:\\Users\\Admin\\Desktop " + file + " .html");
 
                 try (PrintWriter pw = new PrintWriter(f)) {
                     
