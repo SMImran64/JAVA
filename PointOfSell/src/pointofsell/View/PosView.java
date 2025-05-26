@@ -1353,12 +1353,13 @@ public class PosView extends javax.swing.JFrame {
 
     private void btnCategoryEditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryEditMouseClicked
         // TODO add your handling code here:
-        String name = txtCategoryName.getText().trim();
+        String name = txtCategoryName1.getText().trim();
         int id = Integer.parseInt(txtCategoryId1.getText().trim());
 
         categoryDao.editCategory(id, name, tblCategory);
         btnCategorySave.setVisible(true);
         resetCategory();
+        categoryDao.showAllCategory(tblCategory);
     }//GEN-LAST:event_btnCategoryEditMouseClicked
 
     private void tblCategoryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblCategoryMouseClicked
