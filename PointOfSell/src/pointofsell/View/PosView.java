@@ -46,7 +46,8 @@ public class PosView extends javax.swing.JFrame {
         btnCustomerSave.setVisible(true);
 
     }
-
+    //Reset Category text file  
+    
     public void resetCategory() {
 
         txtCategoryId1.setText("");
@@ -55,6 +56,8 @@ public class PosView extends javax.swing.JFrame {
 
     }
 
+     //Reset Supplier text file  
+    
     public void resetSupplier() {
 
         txtSupplierId.setText("");
@@ -321,6 +324,11 @@ public class PosView extends javax.swing.JFrame {
         btnPurchase.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnPurchaseMouseClicked(evt);
+            }
+        });
+        btnPurchase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPurchaseActionPerformed(evt);
             }
         });
 
@@ -968,23 +976,29 @@ public class PosView extends javax.swing.JFrame {
 
         jPanel23.setBackground(new java.awt.Color(204, 204, 204));
 
-        jLabel15.setText("Category");
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel15.setText("Category :");
 
         comboPurchaseCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel21.setText("Product Name");
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel21.setText("Product Name :");
 
         comboPurchaseProductName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel22.setText("Supplier Name");
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel22.setText("Supplier Name :");
 
         comboPurchaseSupplierName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel23.setText("Unit Price");
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel23.setText("Unit Price : ");
 
-        jLabel24.setText("Quantity");
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel24.setText("Quantity  :");
 
-        jLabel25.setText("Total Price");
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel25.setText("Total Price :");
 
         btnPurchaseConfirm.setText("Confirm");
 
@@ -998,16 +1012,17 @@ public class PosView extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(comboPurchaseCategory, 0, 184, Short.MAX_VALUE)
                             .addComponent(txtPurchaseUnitPrice))
-                        .addGap(50, 50, 50)
+                        .addGap(31, 31, 31)
                         .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                             .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(btnPurchaseConfirm))
                 .addGap(18, 18, 18)
@@ -1025,7 +1040,7 @@ public class PosView extends javax.swing.JFrame {
                             .addComponent(comboPurchaseSupplierName, 0, 217, Short.MAX_VALUE)
                             .addComponent(txtPurchaseTotalPrice)))
                     .addComponent(btnPurchaseReset))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1050,8 +1065,10 @@ public class PosView extends javax.swing.JFrame {
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPurchaseConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPurchaseReset, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(611, Short.MAX_VALUE))
+                .addContainerGap(607, Short.MAX_VALUE))
         );
+
+        jLabel15.getAccessibleContext().setAccessibleName("Category :");
 
         jPanel11.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1170, 820));
 
@@ -1392,6 +1409,10 @@ public class PosView extends javax.swing.JFrame {
     private void btnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSupplierActionPerformed
+
+    private void btnPurchaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPurchaseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPurchaseActionPerformed
 
     /**
      * @param args the command line arguments

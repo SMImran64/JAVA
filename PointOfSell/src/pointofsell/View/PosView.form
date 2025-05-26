@@ -325,6 +325,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnPurchaseMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPurchaseActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -1405,19 +1406,20 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel15" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
-                                  <Component id="jLabel23" alignment="0" min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Component id="jLabel15" min="-2" pref="82" max="-2" attributes="0"/>
+                                  <Component id="jLabel23" min="-2" pref="92" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="comboPurchaseCategory" pref="184" max="32767" attributes="0"/>
                                           <Component id="txtPurchaseUnitPrice" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel21" pref="90" max="32767" attributes="0"/>
+                                          <Component id="jLabel21" pref="119" max="32767" attributes="0"/>
                                           <Component id="jLabel24" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -1443,7 +1445,7 @@
                                   </Group>
                                   <Component id="btnPurchaseReset" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="112" max="32767" attributes="0"/>
+                              <EmptySpace pref="82" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1473,7 +1475,7 @@
                                   <Component id="btnPurchaseConfirm" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                                   <Component id="btnPurchaseReset" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="611" max="32767" attributes="0"/>
+                              <EmptySpace pref="607" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1481,8 +1483,14 @@
                   <SubComponents>
                     <Component class="javax.swing.JLabel" name="jLabel15">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Category"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="16" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Category :"/>
                       </Properties>
+                      <AccessibilityProperties>
+                        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Category :"/>
+                      </AccessibilityProperties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="comboPurchaseCategory">
                       <Properties>
@@ -1501,7 +1509,10 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel21">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Product Name"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="16" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Product Name :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="comboPurchaseProductName">
@@ -1521,7 +1532,10 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel22">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Supplier Name"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="16" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Supplier Name :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="comboPurchaseSupplierName">
@@ -1541,21 +1555,30 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel23">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Unit Price"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="16" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Unit Price : "/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtPurchaseUnitPrice">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel24">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Quantity"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="16" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Quantity  :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtPurchaseQuantity">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel25">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Total Price"/>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Segoe UI" size="16" style="1"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Total Price :"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtPurchaseTotalPrice">
