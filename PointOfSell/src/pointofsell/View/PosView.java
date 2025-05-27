@@ -6,7 +6,10 @@ package pointofsell.View;
 
 import Daw.CategoryDao;
 import Daw.CustomerDaw;
+import Daw.PurchaseDao;
 import Daw.SupplierDao;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import pos.util.DatabaseUtil;
@@ -22,6 +25,8 @@ public class PosView extends javax.swing.JFrame {
     CustomerDaw customerDaw = new CustomerDaw();
     CategoryDao categoryDao = new CategoryDao();
     SupplierDao supplierDao = new SupplierDao();
+    PurchaseDao purchaseDao = new PurchaseDao();
+    
 
     /**
      * Creates new form PosView
@@ -32,7 +37,25 @@ public class PosView extends javax.swing.JFrame {
         customerDaw.showAllCustomer(tblCustomer);
         categoryDao.showAllCategory(tblCategory);
         supplierDao.showAllSupplier(tblSupplier);
+        purchaseDao.loadCategory(comboPurchaseCategory);
 
+        comboPurchaseCategory.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+
+                String categoryName = comboPurchaseCategory.getSelectedItem().toString();
+                
+                purchaseDao.loadProduct(comboPurchaseProductName, categoryName);
+              //  System.out.println(categoryName);
+            }
+        });
+
+//        comboPurchaseProductName.addItemListener(new ItemListener() {
+//            @Override
+//            public void itemStateChanged(ItemEvent e) {
+//                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//            }
+//        });
     }
 
     // Reset customer text fields
@@ -47,7 +70,7 @@ public class PosView extends javax.swing.JFrame {
 
     }
     //Reset Category text file  
-    
+
     public void resetCategory() {
 
         txtCategoryId1.setText("");
@@ -56,8 +79,7 @@ public class PosView extends javax.swing.JFrame {
 
     }
 
-     //Reset Supplier text file  
-    
+    //Reset Supplier text file  
     public void resetSupplier() {
 
         txtSupplierId.setText("");
@@ -952,6 +974,12 @@ public class PosView extends javax.swing.JFrame {
 
         tapMain.addTab("tab4", tapCategory);
 
+        tapPurchase.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tapPurchaseMouseClicked(evt);
+            }
+        });
+
         jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel22.setBackground(new java.awt.Color(0, 51, 51));
@@ -1068,8 +1096,6 @@ public class PosView extends javax.swing.JFrame {
                 .addContainerGap(607, Short.MAX_VALUE))
         );
 
-        jLabel15.getAccessibleContext().setAccessibleName("Category :");
-
         jPanel11.add(jPanel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1170, 820));
 
         tapPurchase.addTab("tab1", jPanel11);
@@ -1173,6 +1199,8 @@ public class PosView extends javax.swing.JFrame {
     private void btnPurchaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPurchaseMouseClicked
 
         tapMain.setSelectedIndex(4);
+       // purchaseDao.loadCategory(comboPurchaseCategory);
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPurchaseMouseClicked
 
@@ -1328,7 +1356,7 @@ public class PosView extends javax.swing.JFrame {
         btnSupplierSave.setVisible(true);
         resetSupplier();
         supplierDao.showAllSupplier(tblSupplier);
-        
+
     }//GEN-LAST:event_btnSupplierEditMouseClicked
 
     private void btnSupplierResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSupplierResetMouseClicked
@@ -1386,14 +1414,14 @@ public class PosView extends javax.swing.JFrame {
         int rowIndex = tblCategory.getSelectedRow();
         String id = tblCategory.getModel().getValueAt(rowIndex, 0).toString();
         String name = tblCategory.getModel().getValueAt(rowIndex, 1).toString();
-        
+
         txtCategoryId1.setText(id);
         txtCategoryName1.setText(name);
     }//GEN-LAST:event_tblCategoryMouseClicked
 
     private void btnCategoryDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryDeleteMouseClicked
         // TODO add your handling code here:
-        
+
         int id = Integer.parseInt(txtCategoryId1.getText().trim());
         categoryDao.deleteCategory(id, tblCategory);
         resetCategory();
@@ -1402,8 +1430,8 @@ public class PosView extends javax.swing.JFrame {
 
     private void btnCategorySearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategorySearchMouseClicked
         // TODO add your handling code here:
-         int id = Integer.parseInt(txtCategoryId1.getText());
-          categoryDao.search(id, tblCategory);
+        int id = Integer.parseInt(txtCategoryId1.getText());
+        categoryDao.search(id, tblCategory);
     }//GEN-LAST:event_btnCategorySearchMouseClicked
 
     private void btnSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSupplierActionPerformed
@@ -1413,6 +1441,10 @@ public class PosView extends javax.swing.JFrame {
     private void btnPurchaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPurchaseActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnPurchaseActionPerformed
+
+    private void tapPurchaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tapPurchaseMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tapPurchaseMouseClicked
 
     /**
      * @param args the command line arguments
