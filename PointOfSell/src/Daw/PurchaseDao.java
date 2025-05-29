@@ -24,22 +24,21 @@ public class PurchaseDao {
     public void loadProduct(JComboBox<String> ComboProductList, String category) {
 
         ComboProductList.removeAllItems();
-        
+
         List<Stock> stockList = stockDao.getProductByCategory(category);
 
-       // List<Stock> stockList = stockDao.getProductByCategory(category);
-
+        // List<Stock> stockList = stockDao.getProductByCategory(category);
         if (stockList.isEmpty()) {
 
             System.out.println("No Product found!!!");
             return;
 
         }
-        
-        for(Stock s : stockList){
-        
+
+        for (Stock s : stockList) {
+
             ComboProductList.addItem(s.getProductName());
-            
+
         }
 
     }
@@ -64,34 +63,34 @@ public class PurchaseDao {
         }
 
     }
-    
-    public void savePurchase(String name, float unitPrice,float quantity,float totalPrice ,String category,String supplier){
-    
-    sql = "insert into purchase (name,unitPrice,quantity,totalPrice,category,supplier, date)"
-            + "values(?,?,?,?,?,?,now())";
-    
+
+    public void savePurchase(String name, float unitPrice, float quantity, float totalPrice, String category, String supplier) {
+
+        sql = "insert into purchase (name,unitPrice,quantity,totalPrice,category,supplier, date)"
+                + "values(?,?,?,?,?,?,now())";
+
         try {
             ps = util.getCon().prepareStatement(sql);
-            
+
             ps.setString(1, name);
             ps.setFloat(2, unitPrice);
             ps.setFloat(3, quantity);
             ps.setFloat(4, totalPrice);
             ps.setString(5, category);
             ps.setString(6, supplier);
-            
+
             ps.executeUpdate();
             ps.close();
             util.getCon().close();
-            
-                        JOptionPane.showMessageDialog(null, "Purchase Details Save Successfully");
+
+            JOptionPane.showMessageDialog(null, "Purchase Details Save Successfully");
 
         } catch (SQLException ex) {
-                        JOptionPane.showMessageDialog(null, "Purchase doesn't Save");
+            JOptionPane.showMessageDialog(null, "Purchase doesn't Save");
 
             Logger.getLogger(PurchaseDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
+
     }
 
 }
