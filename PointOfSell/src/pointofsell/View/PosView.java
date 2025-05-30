@@ -1849,8 +1849,9 @@ public class PosView extends javax.swing.JFrame {
         java.sql.Date from = dateConvert.utilDateToSqlDate(fromDate);
         java.sql.Date to = dateConvert.utilDateToSqlDate(toDate);
         
-        reportDao.purchaseReportByDate(from, to, tblReport);
+       // reportDao.purchaseReportByDate(from, to, tblReport);
         
+       reportDao.purchaseReportByDate2(from, to, tblReport);
         
     }//GEN-LAST:event_btnReportPurchaseMouseClicked
 
