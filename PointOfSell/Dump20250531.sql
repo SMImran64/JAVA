@@ -26,7 +26,7 @@ CREATE TABLE `category` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +35,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (5,'Computer'),(7,'Ac'),(8,'Vagitable');
+INSERT INTO `category` VALUES (5,'Computer'),(7,'Ac'),(8,'Vagitable'),(9,'Monitor'),(10,'Keyboard'),(11,'Fruits');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -75,14 +75,11 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(100) NOT NULL,
-  `UnitePrice` decimal(10,2) DEFAULT NULL,
-  `Quantity` int DEFAULT NULL,
-  `TotalPrice` decimal(12,2) DEFAULT NULL,
-  `ExpDate` date DEFAULT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `productName` varchar(100) NOT NULL,
+  `category` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +88,38 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` VALUES (1,'KeyBoard','Computer'),(2,'keyboard','Computer'),(3,'Mango Himsagor','Fruits');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `purchase`
+--
+
+DROP TABLE IF EXISTS `purchase`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `purchase` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `productName` varchar(45) NOT NULL,
+  `unitPrice` varchar(45) NOT NULL,
+  `quantity` varchar(45) NOT NULL,
+  `totalPrice` varchar(45) NOT NULL,
+  `date` datetime NOT NULL,
+  `category` varchar(45) NOT NULL,
+  `supplier` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `purchase`
+--
+
+LOCK TABLES `purchase` WRITE;
+/*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
+INSERT INTO `purchase` VALUES (1,'Mouse','100.0','400.0','40000.0','2025-05-27 22:46:45','Computer','SoftEven'),(2,'lady Fingure','150.0','25.0','3750.0','2025-05-27 23:45:10','Vagitable','Pran'),(3,'keyboard','700.0','25.0','17500.0','2025-05-29 01:52:52','Computer','SoftEven'),(4,'keyboard','700.0','25.0','17500.0','2025-05-29 01:53:50','Computer','SoftEven'),(5,'Mango Himsagor','60.0','200.0','12000.0','2025-05-29 11:52:01','Fruits','Pran');
+/*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -109,7 +137,7 @@ CREATE TABLE `sales` (
   `TotalPrice` decimal(12,2) DEFAULT NULL,
   PRIMARY KEY (`Id`),
   KEY `ProductId` (`ProductId`),
-  CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`ProductId`) REFERENCES `product` (`Id`)
+  CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`ProductId`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -135,7 +163,7 @@ CREATE TABLE `stock` (
   `quantity` int NOT NULL,
   `category` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +172,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-INSERT INTO `stock` VALUES (1,'Mouse',10,'Computer'),(2,'Walton',25,'Ac'),(3,'lady Fingure',20,'Vagitable');
+INSERT INTO `stock` VALUES (1,'Mouse',10,'Computer'),(2,'Walton',25,'Ac'),(3,'lady Fingure',20,'Vagitable'),(4,'keyboard',50,'Computer'),(5,'Mango Himsagor',200,'Fruits');
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,4 +213,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-27 19:16:51
+-- Dump completed on 2025-05-31 12:58:16
