@@ -1906,12 +1906,12 @@
                                           <Component id="btnReportPurchase" pref="101" max="32767" attributes="0"/>
                                           <Component id="jLabel29" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                                      <Component id="JdateReportFrom" min="-2" pref="148" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="JdateReportFrom" min="-2" pref="146" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
                                       <Component id="jLabel30" min="-2" pref="76" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                                      <Component id="JdateReportTo" min="-2" pref="181" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="JdateReportTo" min="-2" pref="155" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
@@ -1926,11 +1926,15 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel29" pref="27" max="32767" attributes="0"/>
-                                  <Component id="JdateReportFrom" max="32767" attributes="0"/>
-                                  <Component id="jLabel30" max="32767" attributes="0"/>
-                                  <Component id="JdateReportTo" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="JdateReportFrom" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Component id="JdateReportTo" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jLabel29" pref="27" max="32767" attributes="0"/>
+                                          <Component id="jLabel30" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
                               </Group>
                               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                               <Component id="btnReportPurchase" min="-2" pref="32" max="-2" attributes="0"/>
@@ -1953,8 +1957,6 @@
                         <Property name="text" type="java.lang.String" value="From"/>
                       </Properties>
                     </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="JdateReportFrom">
-                    </Component>
                     <Component class="javax.swing.JLabel" name="jLabel30">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -1965,8 +1967,6 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="To"/>
                       </Properties>
-                    </Component>
-                    <Component class="com.toedter.calendar.JDateChooser" name="JdateReportTo">
                     </Component>
                     <Component class="javax.swing.JButton" name="btnReportPurchase">
                       <Properties>
@@ -2003,6 +2003,10 @@
                         </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="com.toedter.calendar.JDateChooser" name="JdateReportFrom">
+                    </Component>
+                    <Component class="com.toedter.calendar.JDateChooser" name="JdateReportTo">
+                    </Component>
                   </SubComponents>
                 </Container>
               </SubComponents>
