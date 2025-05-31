@@ -1851,7 +1851,7 @@ public class PosView extends javax.swing.JFrame {
         
        // reportDao.purchaseReportByDate(from, to, tblReport);
         
-       reportDao.purchaseReportByDate2(from, to, tblReport);
+       reportDao.generatePDFReoportForPurchase(from, to, tblReport);
         
     }//GEN-LAST:event_btnReportPurchaseMouseClicked
 

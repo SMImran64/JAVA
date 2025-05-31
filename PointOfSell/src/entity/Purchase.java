@@ -16,7 +16,6 @@ public class Purchase {
     }
 
     public Purchase(String productName, float unitPrice, float quantity, float totalPrice, Date date, String category, String supplier) {
-
         this.productName = productName;
         this.unitPrice = unitPrice;
         this.quantity = quantity;
@@ -30,8 +29,8 @@ public class Purchase {
         return productName;
     }
 
-    public void getProductName(String name) {
-        this.productName = name;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public float getUnitPrice() {
@@ -81,5 +80,7 @@ public class Purchase {
     public void setSupplier(String supplier) {
         this.supplier = supplier;
     }
+
+  
 
 }

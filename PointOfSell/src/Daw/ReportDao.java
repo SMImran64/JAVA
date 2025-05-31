@@ -24,6 +24,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -131,10 +132,16 @@ public class ReportDao {
         List<Purchase> purchases = purchaseReportByDate2(from, to, jt);
 
         // create a pdf
+        
+        //Add date and local time date  and multiple pdf generate
+        
+        long mil = System.currentTimeMillis();
+        LocalDate currentDate = LocalDate.now();
+        
         try {
             com.itextpdf.text.Document document = new com.itextpdf.text.Document(A4);
 
-            String filePath = "Purchase_Report.pdf";
+            String filePath = "Purchase_Report"+mil+".pdf";
             PdfWriter.getInstance(document, new FileOutputStream(filePath));
 
             document.open();
@@ -144,6 +151,12 @@ public class ReportDao {
             Paragraph title = new Paragraph("Purchase Roport", titleFont);
             title.setAlignment(Paragraph.ALIGN_CENTER);
             document.add(title);
+            // Add subtitle
+            
+            Font subTitleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 14);
+            Paragraph subTitle = new Paragraph("Purchase Roport: "+currentDate, subTitleFont);
+            subTitle.setAlignment(Paragraph.ALIGN_CENTER);
+            document.add(subTitle);
 
             // Add line brack
             document.add(new Paragraph("\n"));
@@ -174,13 +187,13 @@ public class ReportDao {
 
             for (Purchase p : purchases) {
 
-                table.addCell(new PdfPCell(new Phrase(p.getProductName())));
-                table.addCell(new PdfPCell(new Phrase(String.valueOf(p.getUnitPrice()))));
-                table.addCell(new PdfPCell(new Phrase(String.valueOf(p.getQuantity()))));
-                table.addCell(new PdfPCell(new Phrase(String.valueOf(p.getTotalPrice()))));
-                table.addCell(new PdfPCell(new Phrase(p.getCategory())));
-                table.addCell(new PdfPCell(new Phrase(p.getSupplier())));
-                table.addCell(new PdfPCell(new Phrase(p.getDate().toString())));
+                table.addCell(new PdfPCell(new Phrase(p.getProductName(),dataFont)));
+                table.addCell(new PdfPCell(new Phrase(String.valueOf(p.getUnitPrice()),dataFont)));
+                table.addCell(new PdfPCell(new Phrase(String.valueOf(p.getQuantity()),dataFont)));
+                table.addCell(new PdfPCell(new Phrase(String.valueOf(p.getTotalPrice()),dataFont)));
+                table.addCell(new PdfPCell(new Phrase(p.getCategory(),dataFont)));
+                table.addCell(new PdfPCell(new Phrase(p.getSupplier(),dataFont)));
+                table.addCell(new PdfPCell(new Phrase(p.getDate().toString(),dataFont)));
 
             }
             // Add table to the document
@@ -188,9 +201,13 @@ public class ReportDao {
             document.add(table);
 
             document.close();
-            JOptionPane.showMessageDialog(null, "Purchase Report Generated Successfully");
+            JOptionPane.showMessageDialog(null, "Purchase Report Generated");
 
         } catch (FileNotFoundException ex) {
+            
+                        JOptionPane.showMessageDialog(null, "Purchase Report couldn't Generated ");
+
+            
             Logger.getLogger(ReportDao.class.getName()).log(Level.SEVERE, null, ex);
         } catch (DocumentException ex) {
             Logger.getLogger(ReportDao.class.getName()).log(Level.SEVERE, null, ex);
