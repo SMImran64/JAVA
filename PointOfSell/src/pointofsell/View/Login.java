@@ -17,10 +17,12 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+
+        getRootPane().setDefaultButton(jButton1);
+
 //        PosView pv = new PosView();
 //        pv.dispose();
 //        pv.setVisible(true);
-
     }
 
     /**
@@ -139,10 +141,13 @@ public class Login extends javax.swing.JFrame {
             pv.dispose();
             pv.setVisible(true);
 
+<<<<<<< HEAD
         } else {
 
             JOptionPane.showMessageDialog(null, "Incorrect User name & password");
 
+=======
+>>>>>>> 676088c45cbe74b2ad8c7b9e1c0214b2b7e12c1d
         }
 
 
@@ -150,7 +155,21 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
 
+=======
+        String userName = txtLoginUserName.getText().toLowerCase().toString();
+        String password = txtLoginPassword.getText().toLowerCase().toString();
+
+        if (userName.equalsIgnoreCase("Admin") && password.equals("58520")) {
+
+            PosView pv = new PosView();
+            pv.dispose();
+            pv.setVisible(true);
+
+        }
+
+>>>>>>> 676088c45cbe74b2ad8c7b9e1c0214b2b7e12c1d
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
