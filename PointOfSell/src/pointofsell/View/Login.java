@@ -129,24 +129,28 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-       
+
+        String userName = txtLoginUserName.getText().toLowerCase().toString();
+        String password = txtLoginPassword.getText().toLowerCase().toString();
+
+        if (userName.equalsIgnoreCase("Admin") && password.equals("58520")) {
+
+            PosView pv = new PosView();
+            pv.dispose();
+            pv.setVisible(true);
+
+        } else {
+
+            JOptionPane.showMessageDialog(null, "Incorrect User name & password");
+
+        }
 
 
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         String userName = txtLoginUserName.getText().toLowerCase().toString();
-        String password = txtLoginPassword.getText().toLowerCase().toString();
 
-        if (userName.equalsIgnoreCase("Admin") && password.equals("58520")) {
-            
-           
-            PosView pv = new PosView();
-            pv.dispose();
-            pv.setVisible(true);
-
-        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -177,11 +181,11 @@ public class Login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Login().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
