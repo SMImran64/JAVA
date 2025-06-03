@@ -131,14 +131,15 @@ DROP TABLE IF EXISTS `sales`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `category` varchar(45) DEFAULT NULL,
-  `productName` varchar(45) DEFAULT NULL,
-  `customerName` varchar(45) DEFAULT NULL,
-  `unitPrice` float(10,2) DEFAULT NULL,
-  `quantity` float(10,2) DEFAULT NULL,
-  `totalPrice` float(10,2) DEFAULT NULL,
-  `discountRate` float(10,2) DEFAULT NULL,
-  `actualPrice` float(10,2) DEFAULT NULL,
+  `category` varchar(45) NOT NULL,
+  `productName` varchar(45) NOT NULL,
+  `customerName` varchar(45) NOT NULL,
+  `unitPrice` float(10,2) NOT NULL,
+  `quantity` float(10,2) NOT NULL,
+  `totalPrice` float(10,2) NOT NULL,
+  `discountRate` float(10,2) NOT NULL,
+  `actualPrice` float(10,2) NOT NULL,
+  `date` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `ProductId` (`category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -216,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-03 13:22:37
+-- Dump completed on 2025-06-03 18:49:42
