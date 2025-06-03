@@ -4,6 +4,7 @@
  */
 package pointofsell.View;
 
+import Daw.UserDao;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,6 +12,9 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class Login extends javax.swing.JFrame {
+
+    public String userRole;
+    UserDao userDao = new UserDao();
 
     /**
      * Creates new form Login
@@ -23,6 +27,12 @@ public class Login extends javax.swing.JFrame {
 //        PosView pv = new PosView();
 //        pv.dispose();
 //        pv.setVisible(true);
+    }
+
+    public String getUserRole() {
+
+        return userRole;
+
     }
 
     /**
@@ -134,19 +144,20 @@ public class Login extends javax.swing.JFrame {
 
         String userName = txtLoginUserName.getText().toLowerCase().toString();
         String password = txtLoginPassword.getText().toLowerCase().toString();
+        userRole = userDao.UserVarification(userName, password);
+        PosView pv = new PosView();
 
-        if (userName.equalsIgnoreCase("Admin") && password.equals("58520")) {
+        if (userRole != null) {
 
-            PosView pv = new PosView();
-            pv.dispose();
+            this.dispose();
+            pv.setUserName(userRole);
             pv.setVisible(true);
 
         } else {
 
-            JOptionPane.showMessageDialog(null, "Incorrect User name & password");
+            JOptionPane.showMessageDialog(null, "Username or password is incorrect.");
 
         }
-
 
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -200,8 +211,20 @@ public class Login extends javax.swing.JFrame {
 //                new Login().setVisible(true);
 //            }
 //        });
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Login().setVisible(true);
+        });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
