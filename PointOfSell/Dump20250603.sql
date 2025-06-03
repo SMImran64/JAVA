@@ -130,14 +130,17 @@ DROP TABLE IF EXISTS `sales`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `sales` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `ProductId` int DEFAULT NULL,
-  `UnitePrice` decimal(10,2) DEFAULT NULL,
-  `Quantity` int DEFAULT NULL,
-  `TotalPrice` decimal(12,2) DEFAULT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `ProductId` (`ProductId`),
-  CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`ProductId`) REFERENCES `product` (`id`)
+  `id` int NOT NULL AUTO_INCREMENT,
+  `category` varchar(45) DEFAULT NULL,
+  `productName` varchar(45) DEFAULT NULL,
+  `customerName` varchar(45) DEFAULT NULL,
+  `unitPrice` float(10,2) DEFAULT NULL,
+  `quantity` float(10,2) DEFAULT NULL,
+  `totalPrice` float(10,2) DEFAULT NULL,
+  `discountRate` float(10,2) DEFAULT NULL,
+  `actualPrice` float(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `ProductId` (`category`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -213,4 +216,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-01 13:03:59
+-- Dump completed on 2025-06-03 13:22:37

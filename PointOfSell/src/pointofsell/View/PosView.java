@@ -37,7 +37,6 @@ public class PosView extends javax.swing.JFrame {
     ProductDao productDao = new ProductDao();
     ReportDao reportDao = new ReportDao();
     DateConvert dateConvert = new DateConvert();
-    
 
     /**
      * Creates new form PosView
@@ -52,7 +51,7 @@ public class PosView extends javax.swing.JFrame {
 
         supplierDao.showAllSupplierToPurchaseComboBox(comboPurchaseSupplierName);
         productDao.loadCategoryToProductCombo(txtProductComboBox);
-        
+
         stockDao.getAllStock(tblStock);
 
         comboPurchaseCategory.addItemListener(new ItemListener() {
@@ -228,7 +227,28 @@ public class PosView extends javax.swing.JFrame {
         btnPurchaseReset = new javax.swing.JButton();
         tapSales = new javax.swing.JTabbedPane();
         jPanel12 = new javax.swing.JPanel();
+        jPanel31 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        txtSalesStockQuantity = new javax.swing.JTextField();
+        ComboSalesCategory = new javax.swing.JComboBox<>();
+        jLabel32 = new javax.swing.JLabel();
+        ComboSalesProductName = new javax.swing.JComboBox<>();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        ComboSalesCustomerName = new javax.swing.JComboBox<>();
+        jLabel35 = new javax.swing.JLabel();
+        txtSalesUnitPrice = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        txtSalesQuantity = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        txtSalesTotalPrice = new javax.swing.JTextField();
+        btnSalesSave = new javax.swing.JButton();
+        btnSalesReset = new javax.swing.JButton();
+        jLabel38 = new javax.swing.JLabel();
+        txtSalesDiscountRate = new javax.swing.JTextField();
+        jLabel39 = new javax.swing.JLabel();
+        txtSalesActualPrice = new javax.swing.JTextField();
         tapStock = new javax.swing.JTabbedPane();
         jPanel13 = new javax.swing.JPanel();
         jPanel26 = new javax.swing.JPanel();
@@ -1161,24 +1181,98 @@ public class PosView extends javax.swing.JFrame {
 
         tapMain.addTab("tab5", tapPurchase);
 
-        jLabel7.setText("6");
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(448, 448, 448)
-                .addComponent(jLabel7)
-                .addContainerGap(716, Short.MAX_VALUE))
+        jPanel31.setBackground(new java.awt.Color(102, 0, 102));
+
+        jLabel7.setFont(new java.awt.Font("Algerian", 3, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Sales Details");
+
+        javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
+        jPanel31.setLayout(jPanel31Layout);
+        jPanel31Layout.setHorizontalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1170, Short.MAX_VALUE)
         );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(132, 132, 132)
-                .addComponent(jLabel7)
-                .addContainerGap(821, Short.MAX_VALUE))
+        jPanel31Layout.setVerticalGroup(
+            jPanel31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
         );
+
+        jPanel12.add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1170, 70));
+
+        jLabel31.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 16)); // NOI18N
+        jLabel31.setText("Category : ");
+        jPanel12.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 96, 110, 30));
+        jPanel12.add(txtSalesStockQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(891, 100, 180, 30));
+
+        ComboSalesCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel12.add(ComboSalesCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 150, 30));
+
+        jLabel32.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 16)); // NOI18N
+        jLabel32.setText("Product Name: ");
+        jPanel12.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 160, 30));
+
+        ComboSalesProductName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel12.add(ComboSalesProductName, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, 190, 30));
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
+        jLabel33.setText("Stock Quantity");
+        jPanel12.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 100, 140, 30));
+        jLabel33.getAccessibleContext().setAccessibleName("Stock Quantity :");
+
+        jLabel34.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
+        jLabel34.setText("Customer Name : ");
+        jPanel12.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 166, -1, 30));
+        jLabel34.getAccessibleContext().setAccessibleName("Customer Name : ");
+
+        ComboSalesCustomerName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel12.add(ComboSalesCustomerName, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 180, 30));
+
+        jLabel35.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
+        jLabel35.setText("Unit Price : ");
+        jPanel12.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 166, 100, 30));
+        jPanel12.add(txtSalesUnitPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 130, 30));
+
+        jLabel36.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
+        jLabel36.setText("Quantity : ");
+        jPanel12.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 170, 90, 30));
+
+        txtSalesQuantity.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtSalesQuantityFocusLost(evt);
+            }
+        });
+        jPanel12.add(txtSalesQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 170, 110, 30));
+
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel37.setText("Total Price :");
+        jPanel12.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 100, 30));
+        jPanel12.add(txtSalesTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 160, 30));
+
+        btnSalesSave.setText("Sales");
+        jPanel12.add(btnSalesSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 120, 30));
+
+        btnSalesReset.setText("Reset");
+        jPanel12.add(btnSalesReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 110, 30));
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
+        jLabel38.setText("Discount Rate :");
+        jPanel12.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 166, 130, 30));
+
+        txtSalesDiscountRate.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtSalesDiscountRateFocusLost(evt);
+            }
+        });
+        jPanel12.add(txtSalesDiscountRate, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 170, 90, 30));
+
+        jLabel39.setFont(new java.awt.Font("Segoe UI Black", 1, 16)); // NOI18N
+        jLabel39.setText("Actual Price : ");
+        jPanel12.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 220, 120, 30));
+        jPanel12.add(txtSalesActualPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 222, 140, 30));
 
         tapSales.addTab("tab1", jPanel12);
 
@@ -1592,30 +1686,29 @@ public class PosView extends javax.swing.JFrame {
         float totalPrice = Float.parseFloat(txtPurchaseTotalPrice.getText().trim());
 
         purchaseDao.savePurchase(productName, unitPrice, quantity, totalPrice, category, supplierName);
-        
+
         // for stock update
-        
         List<Stock> sList = stockDao.getProductByCategory(category);
         boolean status = false;
-        
-        for(Stock stock : sList){
-        
-            if(productName.equals(stock.getProductName())){
-                
+
+        for (Stock stock : sList) {
+
+            if (productName.equals(stock.getProductName())) {
+
                 status = true;
                 break;
-            
-            }        
+
+            }
         }
-        
-        if(status){
-        
-            stockDao.updateStockQuantityByProductName(productName, quantity);       
-        
+
+        if (status) {
+
+            stockDao.updateStockQuantityByProductName(productName, quantity);
+
         }
-        
+
         stockDao.getAllStock(tblStock);
-        
+
     }//GEN-LAST:event_btnPurchaseConfirmMouseClicked
 
     private void txtPurchaseQuantityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPurchaseQuantityFocusLost
@@ -1844,18 +1937,44 @@ public class PosView extends javax.swing.JFrame {
 
     private void btnReportPurchaseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnReportPurchaseMouseClicked
         // TODO add your handling code here:
-        
+
         Date fromDate = JdateReportFrom.getDate();
         Date toDate = JdateReportTo.getDate();
-        
+
         java.sql.Date from = dateConvert.utilDateToSqlDate(fromDate);
         java.sql.Date to = dateConvert.utilDateToSqlDate(toDate);
-        
-       // reportDao.purchaseReportByDate(from, to, tblReport);
-        
-       reportDao.generatePDFReoportForPurchase(from, to, tblReport);
-        
+
+        // reportDao.purchaseReportByDate(from, to, tblReport);
+        reportDao.generatePDFReoportForPurchase(from, to, tblReport);
+
     }//GEN-LAST:event_btnReportPurchaseMouseClicked
+
+    private void txtSalesQuantityFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSalesQuantityFocusLost
+        // TODO add your handling code here:
+
+        float unitPrice = Float.parseFloat(txtSalesUnitPrice.getText().trim());
+        float quantity = Float.parseFloat(txtSalesQuantity.getText().trim());
+
+        float totalPrice = unitPrice * quantity;
+
+        txtSalesTotalPrice.setText(String.valueOf(totalPrice));
+
+    }//GEN-LAST:event_txtSalesQuantityFocusLost
+
+    private void txtSalesDiscountRateFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSalesDiscountRateFocusLost
+        // TODO add your handling code here:
+        float unitPrice = Float.parseFloat(txtSalesUnitPrice.getText().trim());
+        float quantity = Float.parseFloat(txtSalesQuantity.getText().trim());
+
+        float totalPrice = unitPrice * quantity;
+        
+        float discount = Float.parseFloat(txtSalesDiscountRate.getText().trim());
+        
+        float actualAmount = (float)Math.ceil(totalPrice - (totalPrice*(discount/100)));
+
+        txtSalesActualPrice.setText(String.valueOf(actualAmount));
+
+    }//GEN-LAST:event_txtSalesDiscountRateFocusLost
 
     /**
      * @param args the command line arguments
@@ -1893,6 +2012,9 @@ public class PosView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ComboSalesCategory;
+    private javax.swing.JComboBox<String> ComboSalesCustomerName;
+    private javax.swing.JComboBox<String> ComboSalesProductName;
     private com.toedter.calendar.JDateChooser JdateReportFrom;
     private com.toedter.calendar.JDateChooser JdateReportTo;
     private javax.swing.JLabel b;
@@ -1918,6 +2040,8 @@ public class PosView extends javax.swing.JFrame {
     private javax.swing.JButton btnReport;
     private javax.swing.JButton btnReportPurchase;
     private javax.swing.JButton btnSales;
+    private javax.swing.JButton btnSalesReset;
+    private javax.swing.JButton btnSalesSave;
     private javax.swing.JButton btnStock;
     private javax.swing.JButton btnSupplier;
     private javax.swing.JButton btnSupplierDelete;
@@ -1956,6 +2080,15 @@ public class PosView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1986,6 +2119,7 @@ public class PosView extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
@@ -2029,6 +2163,12 @@ public class PosView extends javax.swing.JFrame {
     private javax.swing.JTextField txtPurchaseQuantity;
     private javax.swing.JTextField txtPurchaseTotalPrice;
     private javax.swing.JTextField txtPurchaseUnitPrice;
+    private javax.swing.JTextField txtSalesActualPrice;
+    private javax.swing.JTextField txtSalesDiscountRate;
+    private javax.swing.JTextField txtSalesQuantity;
+    private javax.swing.JTextField txtSalesStockQuantity;
+    private javax.swing.JTextField txtSalesTotalPrice;
+    private javax.swing.JTextField txtSalesUnitPrice;
     private javax.swing.JTextField txtSupplierAddress;
     private javax.swing.JTextField txtSupplierCell;
     private javax.swing.JTextField txtSupplierContractPerson;
