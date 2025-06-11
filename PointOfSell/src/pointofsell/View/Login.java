@@ -164,16 +164,16 @@ public class Login extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
-        String userName = txtLoginUserName.getText().toLowerCase().toString();
-        String password = txtLoginPassword.getText().toLowerCase().toString();
-
-        if (userName.equalsIgnoreCase("Admin") && password.equals("58520")) {
-
-            PosView pv = new PosView();
-            pv.dispose();
-            pv.setVisible(true);
-
-        }
+//        String userName = txtLoginUserName.getText().toLowerCase().toString();
+//        String password = txtLoginPassword.getText().toLowerCase().toString();
+//
+//        if (userName.equalsIgnoreCase("Admin") && password.equals("58520")) {
+//
+//            PosView pv = new PosView();
+//            pv.dispose();
+//            pv.setVisible(true);
+//
+//        }
 
 
     }//GEN-LAST:event_jButton1ActionPerformed

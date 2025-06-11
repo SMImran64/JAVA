@@ -4,6 +4,8 @@
  */
 package entity;
 
+import java.util.Date;
+
 /**
  *
  * @author USER
@@ -19,11 +21,12 @@ public class Sales {
     private float discountRate;
     private float totalPrice;
     private float actualPrice;
+    private Date date;
 
     public Sales() {
     }
 
-    public Sales(int id, String category, String productName, String cutomerName, float unitPrice, float quantity, float discountRate, float totalPrice, float actualPrice) {
+    public Sales(int id, String category, String productName, String cutomerName, float unitPrice, float quantity, float discountRate, float totalPrice, float actualPrice, Date date) {
         this.id = id;
         this.category = category;
         this.productName = productName;
@@ -33,9 +36,10 @@ public class Sales {
         this.discountRate = discountRate;
         this.totalPrice = totalPrice;
         this.actualPrice = actualPrice;
+        this.date = date;
     }
 
-    public Sales(String category, String productName, String cutomerName, float unitPrice, float quantity, float discountRate, float totalPrice, float actualPrice) {
+    public Sales(String category, String productName, String cutomerName, float unitPrice, float quantity, float discountRate, float totalPrice, float actualPrice, Date date) {
         this.category = category;
         this.productName = productName;
         this.cutomerName = cutomerName;
@@ -44,9 +48,10 @@ public class Sales {
         this.discountRate = discountRate;
         this.totalPrice = totalPrice;
         this.actualPrice = actualPrice;
+        this.date = date;
     }
-    
 
+    
     public int getId() {
         return id;
     }
@@ -118,6 +123,18 @@ public class Sales {
     public void setActualPrice(float actualPrice) {
         this.actualPrice = actualPrice;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+    
+    
+
+    
     
     
 }
