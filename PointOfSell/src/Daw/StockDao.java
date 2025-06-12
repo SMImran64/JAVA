@@ -157,4 +157,27 @@ public class StockDao {
         }
         return quantity;
     }
+    
+    
+      public void updateStockQuantityByProductNameSales(String productName, float quantity) {
+
+        sql = "update stock set quantity = quantity - ? where productName = ?";
+
+        try {
+            ps = util.getCon().prepareStatement(sql);
+            ps.setFloat(1, quantity);
+            ps.setString(2, productName);
+
+            ps.executeUpdate();
+            ps.close();
+            util.getCon().close();
+
+            //JOptionPane.showMessageDialog(null, "Purchase Details Save Successfully");
+        } catch (SQLException ex) {
+            // JOptionPane.showMessageDialog(null, "Purchase doesn't Save");
+
+            Logger.getLogger(PurchaseDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 }

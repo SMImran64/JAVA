@@ -13,6 +13,7 @@ import Daw.SalesDao;
 import Daw.StockDao;
 import Daw.SupplierDao;
 import Daw.UserDao;
+import entity.Sales;
 import entity.Stock;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -52,7 +53,7 @@ public class PosView extends javax.swing.JFrame {
         categoryDao.showAllCategory(tblCategory);
         supplierDao.showAllSupplier(tblSupplier);
         purchaseDao.loadCategory(comboPurchaseCategory);
-
+        customerDaw.showAllCustomerInSales(ComboSalesCustomerName);
         supplierDao.showAllSupplierToPurchaseComboBox(comboPurchaseSupplierName);
         productDao.loadCategoryToProductCombo(txtProductComboBox);
 
@@ -1302,6 +1303,11 @@ public class PosView extends javax.swing.JFrame {
         jPanel12.add(txtSalesTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 170, 170, 30));
 
         btnSalesSave.setText("Sales");
+        btnSalesSave.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSalesSaveMouseClicked(evt);
+            }
+        });
         jPanel12.add(btnSalesSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 120, 30));
 
         btnSalesReset.setText("Reset");
@@ -1326,6 +1332,12 @@ public class PosView extends javax.swing.JFrame {
         tapSales.addTab("tab1", jPanel12);
 
         tapMain.addTab("tab6", tapSales);
+
+        tapStock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tapStockMouseClicked(evt);
+            }
+        });
 
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1383,6 +1395,11 @@ public class PosView extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tblStock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblStockMouseClicked(evt);
+            }
+        });
         jScrollPane5.setViewportView(tblStock);
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
@@ -1685,6 +1702,7 @@ public class PosView extends javax.swing.JFrame {
 
     private void btnStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnStockMouseClicked
         tapMain.setSelectedIndex(6);
+         stockDao.getAllStock(tblStock);
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnStockMouseClicked
@@ -2024,6 +2042,34 @@ public class PosView extends javax.swing.JFrame {
         txtSalesActualPrice.setText(String.valueOf(actualAmount));
 
     }//GEN-LAST:event_txtSalesDiscountRateFocusLost
+
+    private void btnSalesSaveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalesSaveMouseClicked
+        // TODO add your handling code here:
+        
+        String category = ComboSalesCategory.getSelectedItem().toString();
+        String productName = ComboSalesCategory.getSelectedItem().toString();
+        String customerName = ComboSalesCategory.getSelectedItem().toString();
+        float quantity = Float.parseFloat(txtSalesQuantity.getText().trim());
+        float unitprice = Float.parseFloat(txtSalesUnitPrice.getText().trim());
+        float totalPrice = Float.parseFloat(txtSalesTotalPrice.getText().trim());
+        float discountRate = Float.parseFloat(txtSalesDiscountRate.getText().trim());
+        float actualPrice = Float.parseFloat(txtSalesActualPrice.getText().trim());
+        
+        Sales s = new Sales(category, productName, customerName, unitprice, quantity, discountRate, totalPrice, actualPrice);
+        
+        salesDao.saveSales(s);
+        
+        stockDao.updateStockQuantityByProductNameSales(productName, quantity);
+       
+    }//GEN-LAST:event_btnSalesSaveMouseClicked
+
+    private void tblStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblStockMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblStockMouseClicked
+
+    private void tapStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tapStockMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tapStockMouseClicked
 
     /**
      * @param args the command line arguments

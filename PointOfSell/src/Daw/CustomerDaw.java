@@ -1,10 +1,13 @@
-package Daw;
+ package Daw;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -162,6 +165,38 @@ public class CustomerDaw {
             util.getCon().close();
         } catch (SQLException ex) {
             Logger.getLogger(CustomerDaw.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    
+     public void showAllCustomerInSales(JComboBox<String> jcb) {
+         
+         jcb.removeAllItems();
+         List<String> customersName = new ArrayList<>();       
+
+        String sql = "select name from customers";
+
+        try {
+            PreparedStatement ps = util.getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {               
+                String customerName = rs.getString("name");
+                customersName.add(customerName);              
+            }
+            rs.close();
+            ps.close();
+
+            util.getCon().close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CustomerDaw.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        for(String c : customersName){
+        
+            jcb.addItem(c);
+        
         }
 
     }

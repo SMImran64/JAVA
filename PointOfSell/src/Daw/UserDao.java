@@ -38,11 +38,11 @@ public class UserDao {
             while (rs.next()) {
 
                 int id = rs.getInt("id");
-                String userName = rs.getString("userName");
+                String userName = rs.getString("name");
                 String password = rs.getString("password");
-                String designation = rs.getString("designation");
+                String role = rs.getString("role");
 
-                userlist.add(new User(id, userName, password, designation));
+                userlist.add(new User(id, userName, password, role));
 
             }
 
@@ -54,7 +54,7 @@ public class UserDao {
 
                 if (user.equalsIgnoreCase(users.getName()) && pass.equals(users.getPassword())) {
 
-                    userRole = users.getDesignation();
+                    userRole = users.getUserRole();
                     break;
 
                 }

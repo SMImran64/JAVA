@@ -39,7 +39,7 @@ public class Sales {
         this.date = date;
     }
 
-    public Sales(String category, String productName, String cutomerName, float unitPrice, float quantity, float discountRate, float totalPrice, float actualPrice, Date date) {
+    public Sales(String category, String productName, String cutomerName, float unitPrice, float quantity, float discountRate, float totalPrice, float actualPrice) {
         this.category = category;
         this.productName = productName;
         this.cutomerName = cutomerName;
@@ -48,8 +48,9 @@ public class Sales {
         this.discountRate = discountRate;
         this.totalPrice = totalPrice;
         this.actualPrice = actualPrice;
-        this.date = date;
     }
+
+  
 
     
     public int getId() {

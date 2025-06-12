@@ -13,16 +13,16 @@ public class User {
     private int id;
     private String name;
     private String password;
-    private String designation;
+    private String userRole;
 
     public User() {
     }
 
-    public User(int id, String name, String password, String designation) {
+    public User(int id, String name, String password, String userRole) {
         this.id = id;
         this.name = name;
         this.password = password;
-        this.designation = designation;
+        this.userRole = userRole;
     }
 
     public int getId() {
@@ -49,12 +49,12 @@ public class User {
         this.password = password;
     }
 
-    public String getDesignation() {
-        return designation;
+    public String getUserRole() {
+        return userRole;
     }
 
-    public void setDesignation(String designation) {
-        this.designation = designation;
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
     }
     
     
