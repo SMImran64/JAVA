@@ -146,6 +146,8 @@ public class Login extends javax.swing.JFrame {
         String password = txtLoginPassword.getText().toLowerCase().toString();
         userRole = userDao.UserVarification(userName, password);
         PosView pv = new PosView();
+        
+        System.out.println(userRole);
 
         if (userRole != null) {
 

@@ -2047,9 +2047,9 @@ public class PosView extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String category = ComboSalesCategory.getSelectedItem().toString();
-        String productName = ComboSalesCategory.getSelectedItem().toString();
-        String customerName = ComboSalesCategory.getSelectedItem().toString();
-        float quantity = Float.parseFloat(txtSalesQuantity.getText().trim());
+        String productName = ComboSalesProductName.getSelectedItem().toString();
+        String customerName = ComboSalesCustomerName.getSelectedItem().toString();
+        float quantity = Float.parseFloat(txtSalesStockQuantity.getText().trim());
         float unitprice = Float.parseFloat(txtSalesUnitPrice.getText().trim());
         float totalPrice = Float.parseFloat(txtSalesTotalPrice.getText().trim());
         float discountRate = Float.parseFloat(txtSalesDiscountRate.getText().trim());
@@ -2058,6 +2058,8 @@ public class PosView extends javax.swing.JFrame {
         Sales s = new Sales(category, productName, customerName, unitprice, quantity, discountRate, totalPrice, actualPrice);
         
         salesDao.saveSales(s);
+        
+        System.out.println(quantity);
         
         stockDao.updateStockQuantityByProductNameSales(productName, quantity);
        
