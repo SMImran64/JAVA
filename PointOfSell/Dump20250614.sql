@@ -54,7 +54,7 @@ CREATE TABLE `customers` (
   `address` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -63,7 +63,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (2,'Abdullah Al Masud','01786555277','abdullahalmasud011@gmail.com','Saver,Dhaka'),(4,'Istiaque','01515203269','junayet03@gmail.com','Mohammadpur');
+INSERT INTO `customers` VALUES (2,'Abdullah Al Masud','01786555277','abdullahalmasud011@gmail.com','Saver,Dhaka'),(4,'Istiaque','01515203269','junayet03@gmail.com','Mohammadpur'),(10,'Imran Mia','01571407696','imran@gmail.com','Azimpur');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,7 +142,7 @@ CREATE TABLE `sales` (
   `date` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `ProductId` (`category`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,6 +151,7 @@ CREATE TABLE `sales` (
 
 LOCK TABLES `sales` WRITE;
 /*!40000 ALTER TABLE `sales` DISABLE KEYS */;
+INSERT INTO `sales` VALUES (1,'Fruits','Fruits','Fruits',50.00,80.00,4000.00,2.00,3920.00,'2025-06-12 06:23:19'),(2,'Fruits','Fruits','Fruits',50.00,90.00,4500.00,2.00,4410.00,'2025-06-12 06:33:32'),(3,'Fruits','Fruits','Fruits',10.00,90.00,900.00,2.00,882.00,'2025-06-12 06:40:22'),(4,'Vagitable','Vagitable','Vagitable',10.00,100.00,1000.00,2.00,980.00,'2025-06-12 06:41:15'),(5,'Vagitable','Vagitable','Vagitable',10.00,60.00,600.00,2.00,588.00,'2025-06-13 23:12:16'),(6,'Vagitable','Vagitable','Vagitable',20.00,1.00,20.00,0.00,20.00,'2025-06-13 23:14:55'),(7,'Vagitable','Vagitable','Vagitable',20.00,1.00,20.00,0.00,20.00,'2025-06-13 23:18:25'),(8,'Vagitable','lady Fingure','Vagitable',20.00,1.00,20.00,0.00,20.00,'2025-06-13 23:27:18');
 /*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,7 +165,7 @@ DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock` (
   `id` int NOT NULL AUTO_INCREMENT,
   `productName` varchar(100) NOT NULL,
-  `quantity` int NOT NULL,
+  `quantity` float NOT NULL,
   `category` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -176,7 +177,7 @@ CREATE TABLE `stock` (
 
 LOCK TABLES `stock` WRITE;
 /*!40000 ALTER TABLE `stock` DISABLE KEYS */;
-INSERT INTO `stock` VALUES (1,'Mouse',10,'Computer'),(2,'Walton',25,'Ac'),(3,'lady Fingure',20,'Vagitable'),(4,'keyboard',50,'Computer'),(5,'Mango Himsagor',200,'Fruits');
+INSERT INTO `stock` VALUES (1,'Mouse',10,'Computer'),(2,'Walton',25,'Ac'),(3,'lady Fingure',0,'Vagitable'),(4,'keyboard',50,'Computer'),(5,'Mango Himsagor',200,'Fruits');
 /*!40000 ALTER TABLE `stock` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,6 +208,32 @@ LOCK TABLES `suppliers` WRITE;
 INSERT INTO `suppliers` VALUES (7,'Pran','Mogbazar','654654654','pran@gmail.com','Shimul'),(9,'Ibne Sina','Azimpur','4654654','ibnesina@gamil.com','Shinoayer'),(12,'SoftEven','Mohakhali','4654687','softeven@gmail.com','Eiasin');
 /*!40000 ALTER TABLE `suppliers` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `role` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'Imran','58520','manager'),(2,'Faruk','12345','cashier'),(3,'Ovi','12345','user');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -217,4 +244,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-03 18:49:42
+-- Dump completed on 2025-06-14 14:00:12
